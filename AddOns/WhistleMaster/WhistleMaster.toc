@@ -1,0 +1,18 @@
+## Interface: 70300
+## Title: WhistleMaster
+## Notes: Shows you which flightmaster the Flight Master's Whistle will take you to when used.
+## Author: Vynn of Khadgar (US)
+## Version: 1.7.2.1
+## X-Email: mischivin@gmail.com
+## X-Category: 
+
+WhistleMaster.lua
+WhistleMaster.xml
+WhistleMaster_LDB.lua
+
+## Title-zhCN: |cff880303[有爱]|r WhistleMaster 最近飞行点
+## Notes-zhCN: 破碎群岛飞行管理员哨子提示
+## X-Vendor: NetEase
+
+
+## X-163UI-Version: 20170831002755

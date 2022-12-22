@@ -1,0 +1,212 @@
+if GetLocale() == 'zhCN' then
+	MAPMARK_TITLE = "NPC显示"
+
+	MAP_MARK_PROF = "职业训练"
+	MAP_MARK_PROF_DRUID = "德鲁伊训练师"
+	MAP_MARK_PROF_HUNTER = "猎人训练师"
+	MAP_MARK_PROF_MAGE = "法师训练师"
+	MAP_MARK_PROF_MONK = "武僧训练师"
+	MAP_MARK_PROF_PALADIN = "圣骑士训练师"
+	MAP_MARK_PROF_PRIEST = "牧师训练师"
+	MAP_MARK_PROF_ROGUE = "潜行者训练师"
+	MAP_MARK_PROF_SHAMAN = "萨满祭司训练师"
+	MAP_MARK_PROF_WARLOCK = "术士训练师"
+	MAP_MARK_PROF_WARRIOR = "战士训练师"
+	MAP_MARK_PROF_DEATHKNIGHT = "死亡骑士训练师"
+	MAP_MARK_PROF_DEMONHUNTER = "恶魔猎手训练师"
+
+	NPCM_ALCHE = '炼金术'
+	NPCM_ARCHAEOLOGY = '考古学'
+	NPCM_BLACKSMITH = '锻造'
+	NPCM_COOKING = '烹饪'
+	NPCM_ENCHANTING = '附魔'
+	NPCM_ENGINEERING = '工程学'
+	NPCM_FIRSTAID = '急救'
+	NPCM_FISHING = '钓鱼'
+	NPCM_HERBALISM = '草药学'
+	NPCM_INSCRIPTION = '铭文'
+	NPCM_JEWEL = '珠宝加工'
+	NPCM_LEATHERWORKING = '制皮'
+	NPCM_MINING = '采矿'
+	NPCM_RIDING = '骑术'
+	NPCM_SKINNING = '剥皮'
+	NPCM_TAILORING = '裁缝'
+
+	MAP_MARK_SKILL = "技能训练"
+	MAP_MARK_PROF_ALCHE = "炼金术训练师"
+	MAP_MARK_PROF_ARCHAEOLOGY = "考古学训练师"
+	MAP_MARK_PROF_BLACKSMITH = "锻造训练师"
+	MAP_MARK_PROF_COOKING = "烹饪训练师"
+	MAP_MARK_PROF_ENCHANTING = "附魔训练师"
+	MAP_MARK_PROF_ENGINEERING = "工程学训练师"
+	MAP_MARK_PROF_FIRSTAID = "急救训练师"
+	MAP_MARK_PROF_FISHING = "钓鱼训练师"
+	MAP_MARK_PROF_FLYING = "飞行训练师"
+	MAP_MARK_PROF_HERBALISM = "草药学训练师"
+	MAP_MARK_PROF_INSCRIPTION = "铭文训练师"
+	MAP_MARK_PROF_JEWEL = "珠宝加工训练师"
+	MAP_MARK_PROF_LEATHERWORKING = "制皮训练师"
+	MAP_MARK_PROF_MINING = "采矿训练师"
+	MAP_MARK_PROF_RIDING = "骑术训练师"
+	MAP_MARK_PROF_SKINNING = "剥皮训练师"
+	MAP_MARK_PROF_TAILORING = "裁缝训练师"
+
+	MAP_MARK_DEMON = "恶魔训练师"
+	MAP_MARK_PORTAL = "传送门训练师"
+
+	MAP_MARK_INN = "旅店老板"
+	MAP_MARK_FLY = "飞行管理员"
+	MAP_MARK_FLY1 = "双足飞龙管理员"
+	MAP_MARK_FLY2 = "蝙蝠管理员"
+	MAP_MARK_FLY3 = "龙鹰管理员"
+	MAP_MARK_FLY4 = "狮鹫管理员"
+	MAP_MARK_FLY5 = "角鹰兽管理员"
+	MAP_MARK_FLY6 = "双头飞龙管理员"
+	MAP_MARK_FLY7 = "中立龙鹰管理员"
+	MAP_MARK_FLY8 = "中立狮鹫管理员"
+	MAP_MARK_FLY9 = "中立角鹰兽管理员"
+
+	MAP_MARK_AUCTION = "拍卖师"
+	MAP_MARK_AUCTION1 = "工程拍卖"
+	MAP_MARK_BANK = "银行职员"
+	MAP_MARK_BANK1 = "工程仓库"
+	MAP_MARK_BARBER = "理发师"
+	MAP_MARK_DUMMY = "训练假人"
+	MAP_MARK_REFORGE = "奥术重铸师"
+	MAP_MARK_STABLE = "兽栏管理员"
+	MAP_MARK_TRAFFIC = "交通工具"
+	MAP_MARK_TRAFFIC1 = "船舶"
+	MAP_MARK_TRAFFIC2 = "飞艇"
+	MAP_MARK_TRAFFIC3 = "地铁"
+	MAP_MARK_TRANSFER = "传送门"
+	MAP_MARK_TRANSFER1 = "传送宝珠"
+	MAP_MARK_TRANSFER2 = "入口"
+
+	MAP_MARK_VENDORS = "世界商人"
+	MAP_MARK_FACTION = "军需官"
+	MAP_MARK_GUILD = "公会注册员"
+	MAP_MARK_HEIRLOOM = "传家宝商人"
+	MAP_MARK_HEIRLOOM1 = "荣誉传家宝"
+	MAP_MARK_HEIRLOOM2 = "冠军徽记传家宝"
+	MAP_MARK_QMHONOR = "PvP装备商"
+	MAP_MARK_QMHONOR1 = "战争坐骑军需官"
+	MAP_MARK_QMGOLD = "PvE装备商"
+	MAP_MARK_VENDOR = "商人"
+
+	MAP_MARK_FACTIONS = "派系"
+	MAP_MARK_OTHERS = "杂货"
+	MAP_MARK_SPECTRANS = "特殊传送"
+	NPCMARK_UNKNOWN_NPC = "未知NPC"
+
+	MAP_MARK_ShadowmoonValleyOUTLAND = "影月谷外域"
+	MAP_MARK_NagrandOUTLAND = "纳格兰外域"
+	MAP_MARK_ShadowmoonValleyDRAENOR = "影月谷德拉诺"
+	MAP_MARK_NagrandDRAENOR = "纳格兰德拉诺"
+
+elseif GetLocale() =='zhTW' then
+	MAPMARK_TITLE = "NPC顯示"
+
+	MAP_MARK_PROF = "職業訓練"
+	MAP_MARK_PROF_DRUID = "德魯伊訓練師"
+	MAP_MARK_PROF_HUNTER = "獵人訓練師"
+	MAP_MARK_PROF_MAGE = "法師訓練師"
+	MAP_MARK_PROF_MONK = "武僧訓練師"
+	MAP_MARK_PROF_PALADIN = "聖騎士訓練師"
+	MAP_MARK_PROF_PRIEST = "牧師訓練師"
+	MAP_MARK_PROF_ROGUE = "盜賊訓練師"
+	MAP_MARK_PROF_SHAMAN = "薩滿訓練師"
+	MAP_MARK_PROF_WARLOCK = "術士訓練師"
+	MAP_MARK_PROF_WARRIOR = "戰士訓練師"
+	MAP_MARK_PROF_DEATHKNIGHT = "死亡騎士訓練師"
+	MAP_MARK_PROF_DEMONHUNTER = "惡魔獵手訓練師"
+
+	NPCM_ALCHE = '煉金術'
+	NPCM_ARCHAEOLOGY = '考古學'
+	NPCM_BLACKSMITH = '鍛造'
+	NPCM_COOKING = '烹飪'
+	NPCM_ENCHANTING = '附魔'
+	NPCM_ENGINEERING = '工程學'
+	NPCM_FIRSTAID = '急救'
+	NPCM_FISHING = '釣魚'
+	NPCM_HERBALISM = '草藥學'
+	NPCM_INSCRIPTION = '銘文學'
+	NPCM_JEWEL = '珠寶設計'
+	NPCM_LEATHERWORKING = '制皮'
+	NPCM_MINING = '採礦'
+	NPCM_RIDING = '騎術'
+	NPCM_SKINNING = '剝皮'
+	NPCM_TAILORING = '裁縫'
+
+	MAP_MARK_SKILL = "技能訓練"
+	MAP_MARK_PROF_ALCHE = "煉金術訓練師"
+	MAP_MARK_PROF_ARCHAEOLOGY = "考古學訓練師"
+	MAP_MARK_PROF_BLACKSMITH = "鍛造訓練師"
+	MAP_MARK_PROF_COOKING = "烹飪訓練師"
+	MAP_MARK_PROF_ENCHANTING = "附魔訓練師"
+	MAP_MARK_PROF_ENGINEERING = "工程學訓練師"
+	MAP_MARK_PROF_FIRSTAID = "急救訓練師"
+	MAP_MARK_PROF_FISHING = "釣魚訓練師"
+	MAP_MARK_PROF_FLYING = "飛行訓練師"
+	MAP_MARK_PROF_HERBALISM = "草藥學訓練師"
+	MAP_MARK_PROF_INSCRIPTION = "銘文學訓練師"
+	MAP_MARK_PROF_JEWEL = "珠寶設計訓練師"
+	MAP_MARK_PROF_LEATHERWORKING = "制皮訓練師"
+	MAP_MARK_PROF_MINING = "採礦訓練師"
+	MAP_MARK_PROF_RIDING = "騎術訓練師"
+	MAP_MARK_PROF_SKINNING = "剝皮訓練師"
+	MAP_MARK_PROF_TAILORING = "裁縫訓練師"
+
+	MAP_MARK_DEMON = "惡魔訓練師"
+	MAP_MARK_PORTAL = "傳送門訓練師"
+
+	MAP_MARK_INN = "旅館老闆"
+	MAP_MARK_FLY = "飛行管理員"
+	MAP_MARK_FLY1 = "雙足飛龍管理員"
+	MAP_MARK_FLY2 = "蝙蝠管理員"
+	MAP_MARK_FLY3 = "龍鷹管理員"
+	MAP_MARK_FLY4 = "獅鷲管理員"
+	MAP_MARK_FLY5 = "角鷹獸管理員"
+	MAP_MARK_FLY6 = "萊拉克管理員"
+	MAP_MARK_FLY7 = "中立龍鷹管理員"
+	MAP_MARK_FLY8 = "中立獅鷲管理員"
+	MAP_MARK_FLY9 = "中立角鷹獸管理員"
+
+	MAP_MARK_AUCTION = "拍賣師"
+	MAP_MARK_AUCTION1 = "工程拍賣"
+	MAP_MARK_BANK = "銀行職員"
+	MAP_MARK_BANK1 = "工程倉庫"
+	MAP_MARK_BARBER = "美容師"
+	MAP_MARK_DUMMY = "訓練假人"
+	MAP_MARK_REFORGE = "秘法重鑄師"
+	MAP_MARK_STABLE = "獸欄管理員"
+	MAP_MARK_TRAFFIC = "交通工具"
+	MAP_MARK_TRAFFIC1 = "船舶"
+	MAP_MARK_TRAFFIC2 = "飛艇"
+	MAP_MARK_TRAFFIC3 = "地鐵"
+	MAP_MARK_TRANSFER = "傳送門"
+	MAP_MARK_TRANSFER1 = "傳送寶珠"
+	MAP_MARK_TRANSFER2 = "入口"
+
+	MAP_MARK_VENDORS = "世界商人"
+	MAP_MARK_FACTION = "軍需官"
+	MAP_MARK_GUILD = "公會註冊員"
+	MAP_MARK_HEIRLOOM = "傳家寶商人"
+	MAP_MARK_HEIRLOOM1 = "榮譽傳家寶"
+	MAP_MARK_HEIRLOOM2 = "冠軍徽記傳家寶"
+	MAP_MARK_QMHONOR = "PvP裝備商"
+	MAP_MARK_QMHONOR1 = "戰爭坐騎軍需官"
+	MAP_MARK_QMGOLD = "PvE裝備商"
+	MAP_MARK_VENDOR = "商人"
+
+	MAP_MARK_FACTIONS = "派系"
+	MAP_MARK_OTHERS = "雜貨"
+	MAP_MARK_SPECTRANS = "特殊傳送"
+	NPCMARK_UNKNOWN_NPC = "未知NPC"
+
+	MAP_MARK_ShadowmoonValleyOUTLAND = "影月穀外域"
+	MAP_MARK_NagrandOUTLAND = "納格蘭外域"
+	MAP_MARK_ShadowmoonValleyDRAENOR = "影月穀德拉諾"
+	MAP_MARK_NagrandDRAENOR = "納格蘭德拉諾"
+else
+
+end

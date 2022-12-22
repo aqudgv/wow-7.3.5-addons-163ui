@@ -1,0 +1,17 @@
+## Interface: 70300
+## Title: Bagnon
+## Author: Tuller & Jaliborc (João Cardoso)
+## Notes: Single window displays for your inventory and bank
+## SavedVariables: Bagnon_Sets
+
+## OptionalDeps: BagBrother, ItemRack, Wardrobe, WoWUnit
+## Version: 7.3.2
+
+main.lua
+
+external\external.xml
+components\components.xml
+
+## Title-zhCN: |cff880303[有爱]|r Bagnon 背包整合
+## X-Vendor: NetEase
+## X-163UI-Version: 20170910205501

@@ -1,0 +1,32 @@
+## Interface: 70300
+## Title: Combuctor
+## Author: Tuller and Jaliborc (João Cardoso)
+## Notes: Pants are a dangerous foe
+## Version: 7.0.0
+## OptionalDeps: BagBrother, Ace3, LibItemCache-1.0, LibItemSearch-1.2, Unfit-1.0
+## SavedVariables: CombuctorVersion, CombuctorDB2
+
+libs\libs.xml
+localization\localization.xml
+
+main.lua
+
+api\api.xml
+sets\sets.xml
+events\events.xml
+
+templates\templates.xml
+components\components.xml
+
+Combuctor_Sets.lua
+
+Combuctor_Opening.lua
+#BagItemLevel.lua
+
+## Notes-zhCN: 可以按照类型过滤的背包&银行整合插件，标签风格。可按任务物品，装备，消耗品、物品品质等分类查看，让你查询物品更直观方便。
+## Title: |cff880303[有爱]|r Combuctor 背包整合
+## X-Vendor: NetEase
+
+
+
+## X-163UI-Version: 20170831002755

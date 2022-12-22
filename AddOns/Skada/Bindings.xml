@@ -1,0 +1,18 @@
+<Bindings>
+	<Binding name="SKADA_TOGGLE" header="Skada" category="ADDONS">
+		Skada:ToggleWindow()
+	</Binding>
+	<Binding name="SKADA_RESET" header="Skada" category="ADDONS">
+		Skada:Reset()
+	</Binding>
+	<Binding name="SKADA_NEWSEGMENT" header="Skada" category="ADDONS">
+		Skada:NewSegment()
+	</Binding>
+	<Binding name="SKADA_STOP" header="Skada" category="ADDONS">
+        if Skada.current and Skada.current.stopped then
+            Skada:ResumeSegment();
+        elseif Skada.current then
+            Skada:StopSegment()
+        end
+	</Binding>
+</Bindings>

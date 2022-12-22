@@ -1,0 +1,26 @@
+## Interface: 70300
+## Title: HandyNotes_Argus
+## Version: 0.20.0
+## Notes: Shows location of treasures and rares in Argus & more
+## OptionalDeps: Ace3
+## RequiredDeps: HandyNotes
+## X-Embeds: Ace3
+## SavedVariables: HandyNotesArgusDB
+
+#@no-lib-strip@
+embeds.xml
+#@end-no-lib-strip@
+
+localization\enUS.lua
+localization\deDE.lua
+localization\esES.lua
+localization\zhCN.lua
+localization\zhTW.lua
+localization\koKR.lua
+localization\ruRU.lua
+HandyNotes_Argus.lua
+
+## Title-zhCN: |cff880303[有爱]|r HandyNotes 阿古斯宝箱
+## X-Vendor: NetEase
+
+## X-163UI-Version: 20171122233847

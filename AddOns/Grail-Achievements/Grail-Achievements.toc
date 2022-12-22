@@ -1,0 +1,14 @@
+## Interface: 70300
+## Title: Grail |r|cff69ccf0Achievements|r
+## Author: Scott M Harrison
+## Notes: Provides achievement information to Grail
+## Version: 011
+## Dependencies: Grail
+## LoadOnDemand: 1
+
+Grail-Achievements.lua
+
+
+## Title: |cff880303[有爱]|r Grail 成就模块
+## X-Vendor: NetEase
+## X-163UI-Version: 20180206013336

@@ -1,0 +1,11 @@
+## Interface: 70300
+## Title: WorldFlightMap
+## Notes: Replaces the taxi map with the world map
+## Author: Semlar
+## Version: 7.3.0.6
+WorldFlightMap.lua
+
+## Title-zhCN: |cff880303[有爱]|r World 世界飞行地图
+## X-Vendor: NetEase
+
+## X-163UI-Version: 20170903204059

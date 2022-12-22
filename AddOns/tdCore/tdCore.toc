@@ -1,0 +1,12 @@
+## Interface: 70300
+## Title: tdCore
+## Author: ldz5
+## Version: 50100.06
+## SavedVariables: TDDB_TDCORE
+
+load.xml
+
+## Title: |cff880303[有爱]|r tdCore 背包整理依赖
+## Notes-zhCN: 背包整理核心程序.
+## X-Vendor: NetEase
+## X-163UI-Version: 20170831002755

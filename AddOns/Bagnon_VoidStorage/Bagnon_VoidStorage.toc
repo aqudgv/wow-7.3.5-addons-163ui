@@ -1,0 +1,16 @@
+## Interface: 70300
+## Title: Bagnon Void Storage
+## Author: Jaliborc (João Cardoso)
+## Notes: Single window display for your void storage
+## RequiredDeps: Bagnon
+## LoadOnDemand: 1
+## Version: 7.3.2
+
+main.lua
+components\components.xml
+
+
+## Title: |cff880303[有爱]|r Bagnon 虚空银行整合
+## Notes: 在一个窗口内显示所有虚空银行内的物品
+## X-Vendor: NetEase
+## X-163UI-Version: 20170910205501
