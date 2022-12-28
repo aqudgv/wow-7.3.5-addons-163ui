@@ -227,7 +227,7 @@ function dropdownScaleFix()
 end
 
 function Mapster:SetAlpha()
-	WorldMapFrame:SetAlpha(db.alpha or 1)
+	WorldMapFrame:SetAlpha(db.alpha)
 end
 
 function WorldMapFrameGetAlpha(frame)
@@ -243,7 +243,6 @@ end
 
 function Mapster:WorldMapFrame_AnimateAlpha(frame, useStartDelay, anim, otherAnim, startAlpha, endAlpha)
 	if frame == WorldMapFrame then
-		if not db.alpha then db.alpha = 1 end
 		if anim == frame.AnimAlphaIn and endAlpha ~= db.alpha then
 			startAlpha = anim.Alpha:GetFromAlpha()
 			local duration = ((db.alpha - startAlpha) / (db.alpha - WORLD_MAP_MIN_ALPHA)) * tonumber(GetCVar("mapAnimDuration"));
@@ -268,9 +267,9 @@ function Mapster:SetArrow()
 end
 
 function Mapster:SetScale()
-	WorldMapFrame:SetScale(db.scale or 1)
+	WorldMapFrame:SetScale(db.scale)
 	if HelpPlate.__Mapster then
-		HelpPlate:SetScale(db.scale or 1)
+		HelpPlate:SetScale(db.scale)
 	end
 
 	WorldMapBlobFrame_UpdateBlobs()

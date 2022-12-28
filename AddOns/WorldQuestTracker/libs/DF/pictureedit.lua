@@ -335,8 +335,8 @@ local _
 		end)
 
 		local resizer = CreateFrame ("Button", nil, window.widget)
-		resizer:SetNormalTexture ([[Interface\AddOns\WorldQuestTracker\images\skins\default_skin]])
-		resizer:SetHighlightTexture ([[Interface\AddOns\WorldQuestTracker\images\skins\default_skin]])
+		resizer:SetNormalTexture ([[Interface\AddOns\Details\images\skins\default_skin]])
+		resizer:SetHighlightTexture ([[Interface\AddOns\Details\images\skins\default_skin]])
 		resizer:GetNormalTexture():SetTexCoord (0.00146484375, 0.01513671875, 0.24560546875, 0.25927734375)
 		resizer:GetHighlightTexture():SetTexCoord (0.00146484375, 0.01513671875, 0.24560546875, 0.25927734375)
 		resizer:SetWidth (16)

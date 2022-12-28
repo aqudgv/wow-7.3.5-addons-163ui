@@ -11,7 +11,7 @@ local DataBroker = LibStub:GetLibrary("LibDataBroker-1.1",true)
 ]]
 
 -- Setup keybinds (these need to be global strings to show up properly in ESC -> Key Bindings)
-BINDING_HEADER_GatherMate2 = "GatherMate2"
+BINDING_HEADER_GatherMate2 = L["GatherMate2"]
 BINDING_NAME_TOGGLE_GATHERMATE2_MINIMAPICONS = L["Keybind to toggle Minimap Icons"]
 BINDING_NAME_TOGGLE_GATHERMATE2_MAINMAPICONS = L["Keybind to toggle Worldmap Icons"]
 
@@ -64,6 +64,7 @@ local function set(k, v) db[k.arg] = v; Config:UpdateConfig(); end
 
 local generalOptions = {
 	type = "group",
+	name = L["GatherMate2"],
 	get = function(k) return db.show[k.arg] end,
 	set = function(k, v) db.show[k.arg] = v; Config:UpdateConfig(); end,
 	args = {
@@ -133,6 +134,7 @@ local generalOptions = {
 
 local minimapOptions = {
 	type = "group",
+	name = L["Minimap"],
 	get = get,
 	set = set,
 	args = {
@@ -1136,32 +1138,34 @@ function Config:OnInitialize()
 	self.importHelper = ImportHelper
 
 	acr:RegisterOptionsTable("GatherMate 2", generalOptions)
-	local options = acd:AddToBlizOptions("GatherMate 2", "GatherMate 2")
+	local options = acd:AddToBlizOptions("GatherMate 2", L["GatherMate 2"])
 	options:HookScript("OnShow", function()
-		local p = findPanel("GatherMate 2")
+		local p = findPanel(L["GatherMate 2"])
 		if p and p.element.collapsed then OptionsListButtonToggle_OnClick(p.toggle) end
 	end)
 
 	acr:RegisterOptionsTable("GM2/Minimap", minimapOptions)
-	acd:AddToBlizOptions("GM2/Minimap", "Minimap", "GatherMate 2")
+	acd:AddToBlizOptions("GM2/Minimap", L["Minimap"], L["GatherMate 2"])
 
 	acr:RegisterOptionsTable("GM2/Filter", filterOptions)
-	acd:AddToBlizOptions("GM2/Filter", "Filters", "GatherMate 2")
+	acd:AddToBlizOptions("GM2/Filter", L["Filters"], L["GatherMate 2"])
 
 	acr:RegisterOptionsTable("GM2/Maintenance", maintenanceOptions)
-	acd:AddToBlizOptions("GM2/Maintenance", "Maintenance", "GatherMate 2")
+	acd:AddToBlizOptions("GM2/Maintenance", L["Maintenance"], L["GatherMate 2"])
 
 	acr:RegisterOptionsTable("GM2/Import", importOptions)
-	acd:AddToBlizOptions("GM2/Import", "Import", "GatherMate 2")
+	acd:AddToBlizOptions("GM2/Import", L["Import"], L["GatherMate 2"])
 
 	acr:RegisterOptionsTable("GM2/Profiles", LibStub("AceDBOptions-3.0"):GetOptionsTable(GatherMate2.db))
-	acd:AddToBlizOptions("GM2/Profiles", "Profiles", "GatherMate 2")
+	acd:AddToBlizOptions("GM2/Profiles", L["Profiles"], L["GatherMate 2"])
 
 	acr:RegisterOptionsTable("GM2/FAQ", faqOptions)
-	acd:AddToBlizOptions("GM2/FAQ", "FAQ", "GatherMate 2")
+	acd:AddToBlizOptions("GM2/FAQ", L["FAQ"], L["GatherMate 2"])
 
 	local function openOptions()
-		InterfaceOptionsFrame_OpenToCategory("GatherMate 2")
+		InterfaceOptionsFrame_OpenToCategory(L["GatherMate 2"])
+		InterfaceOptionsFrame_OpenToCategory(L["Import"])
+		InterfaceOptionsFrame_OpenToCategory(L["GatherMate 2"])
 	end
 
 	SLASH_GatherMate21 = "/gathermate"

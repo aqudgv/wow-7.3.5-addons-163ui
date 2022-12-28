@@ -52,3 +52,7 @@ L["The transparency of the map while you are moving and the map is faded."] = tr
 L["You can change the transparency of the world map to allow you to continue seeing the world environment while your map is open for navigation."] = true
 L["You can control the accuracy of the coordinates, e.g. if you need very exact coordinates you can set this to 2."] = true
 
+L["Mapster"] = true
+L["Profiles"] = true
+L["General Settings"] = true
+L["Mapster Options"] = "Mapster"

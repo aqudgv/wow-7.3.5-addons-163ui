@@ -52,11 +52,12 @@ local function getOptions()
 	if not options then
 		 options = {
 			type = "group",
+			name = L["Quartz3"],
 			args = {
 				general = {
 					type = "group",
 					inline = true,
-					name = "",
+					name = L["General"],
 					args = {
 						unlock = {
 							type = "execute",
@@ -203,13 +204,13 @@ end
 function Quartz3:SetupOptions()
 	self.optFrames = {}
 	LibStub("AceConfigRegistry-3.0"):RegisterOptionsTable("Quartz3", getOptions)
-	self.optFrames.Quartz3 = LibStub("AceConfigDialog-3.0"):AddToBlizOptions("Quartz3", "Quartz 3", nil, "general")
-	self:RegisterModuleOptions("Profiles", LibStub("AceDBOptions-3.0"):GetOptionsTable(self.db), "Profiles")
+	self.optFrames.Quartz3 = LibStub("AceConfigDialog-3.0"):AddToBlizOptions("Quartz3", L["Quartz 3"], nil, "general")
+	self:RegisterModuleOptions("Profiles", LibStub("AceDBOptions-3.0"):GetOptionsTable(self.db), L["Profiles"])
 	self:RegisterChatCommand("quartz", "ChatCommand")
 	self:RegisterChatCommand("q3", "ChatCommand")
 end
 
 function Quartz3:RegisterModuleOptions(name, optTable, displayName)
 	moduleOptions[name] = optTable
-	self.optFrames[name] = LibStub("AceConfigDialog-3.0"):AddToBlizOptions("Quartz3", displayName or name, "Quartz 3", name)
+	self.optFrames[name] = LibStub("AceConfigDialog-3.0"):AddToBlizOptions("Quartz3", displayName or name, L["Quartz 3"], name)
 end

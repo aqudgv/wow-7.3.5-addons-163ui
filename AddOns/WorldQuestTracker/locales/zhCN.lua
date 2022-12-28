@@ -1,6 +1,6 @@
 local L = LibStub("AceLocale-3.0"):NewLocale("WorldQuestTrackerAddon", "zhCN") 
 if not L then return end 
-L["World Quest Tracker"] = "世界任务增强"
+
 L["S_APOWER_AVAILABLE"] = "可用的"
 L["S_APOWER_NEXTLEVEL"] = "下一等级"
 L["S_ENABLED"] = "已启用"

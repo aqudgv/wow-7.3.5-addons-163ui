@@ -1,5 +1,5 @@
 local _, ns = ...
-local CONFIG = {}
+local CONFIG = { SELF = {}, FRIENDLY = {}, HOSTILE = {} }
 ns.CONFIG = CONFIG
 
 ---------------------
@@ -14,8 +14,20 @@ ns.CONFIG = CONFIG
 -- log out and back in or restart the game.
 -- New files won't be accessible until you restart the game.
 
+-- Config variables that start with CONFIG.SELF are used when targeting yourself, config variables that start CONFIG.FRIENDLY are used for friendly targets and config variables that start with CONFIG.HOSTILE are used for hostile targets.
+
 -------
--- The first three variables control the appearance of the texture.
+-- These variables control whether the texture is visible.
+-------
+
+CONFIG.SELF.ENABLED = true
+
+CONFIG.FRIENDLY.ENABLED = true
+
+CONFIG.HOSTILE.ENABLED = true
+
+-------
+-- These variables control the appearance of the texture.
 -------
 
 -- The path of the texture file you want to use relative to the main WoW directory (without the texture's file extension).
@@ -53,7 +65,14 @@ ns.CONFIG = CONFIG
 --	Hunters_Mark			-- Red Hunter's Mark Arrow (contributed by thisguyyouknow of Curse)
 
 -- All of the textures listed above need to be prefixed with "Interface\\AddOns\\TargetNameplateIndicator\\Textures\\" like the default value below.
-CONFIG.TEXTURE_PATH = "Interface\\AddOns\\TargetNameplateIndicator\\Textures\\Reticule"
+-- 要更改 "自己" 個人資源條的箭頭圖案，將下行中的 NeonReticule 替換為 AddOns > TargetNameplateIndicator > Textures 資料夾內的任何一個檔案名稱，不要加上副檔名。
+CONFIG.SELF.TEXTURE_PATH = "Interface\\AddOns\\TargetNameplateIndicator\\Textures\\NeonReticule"
+
+-- 要更改 "友方" 箭頭圖案，將下行中的 NeonGreenArrow 替換為 AddOns > TargetNameplateIndicator > Textures 資料夾內的任何一個檔案名稱，不要加上副檔名。
+CONFIG.FRIENDLY.TEXTURE_PATH = "Interface\\AddOns\\TargetNameplateIndicator\\Textures\\NeonGreenArrow"
+
+-- 要更改 "敵方" 箭頭圖案，將下行中的 NeonRedArrow 替換為 AddOns > TargetNameplateIndicator > Textures 資料夾內的任何一個檔案名稱，不要加上副檔名
+CONFIG.HOSTILE.TEXTURE_PATH  = "Interface\\AddOns\\TargetNameplateIndicator\\Textures\\NeonRedArrow"
 
 -- You can add your own texture by placing a TGA image in the WoW\Interface\AddOns\TargetNameplateIndicator directory and changing the string after TEXTURE_PATH to match its name.
 -- See the "filename" argument on the following page for details on the required texture file format:
@@ -67,19 +86,36 @@ CONFIG.TEXTURE_PATH = "Interface\\AddOns\\TargetNameplateIndicator\\Textures\\Re
 
 
 -- The height/width of the texture. Using a height:width ratio different to that of the texture file may result in distortion.
-CONFIG.TEXTURE_HEIGHT = 50
-CONFIG.TEXTURE_WIDTH = 50
+-- 箭頭圖案的高度和寬度大小比例，兩個數字不同的話圖案會變形。
+CONFIG.SELF.TEXTURE_HEIGHT = 50			-- 自己
+CONFIG.SELF.TEXTURE_WIDTH  = 50
+
+CONFIG.FRIENDLY.TEXTURE_HEIGHT = 50		-- 友方
+CONFIG.FRIENDLY.TEXTURE_WIDTH  = 50
+
+CONFIG.HOSTILE.TEXTURE_HEIGHT  = 50		-- 敵方
+CONFIG.HOSTILE.TEXTURE_WIDTH   = 50
 
 -------
--- These four variables control how the texture is anchored to the nameplate.
+-- These variables control how the texture is anchored to the nameplate.
 -------
 
 -- Used in texture:SetPoint(TEXTURE_POINT, nameplate, ANCHOR_POINT, OFFSET_X, OFFSET_Y)
 -- See http://www.wowpedia.org/API_Region_SetPoint for explanation.
-CONFIG.TEXTURE_POINT = "BOTTOM" -- The point of the texture that should be anchored to the nameplate.
-CONFIG.ANCHOR_POINT  = "TOP"	   -- The point of the nameplate the texture should be anchored to.
-CONFIG.OFFSET_X = 0 			   -- The x/y offset of the texture relative to the anchor point.
-CONFIG.OFFSET_Y = 5
+CONFIG.SELF.TEXTURE_POINT = "BOTTOM"   -- The point of the texture that should be anchored to the nameplate.
+CONFIG.SELF.ANCHOR_POINT  = "TOP"	   -- The point of the nameplate the texture should be anchored to.
+CONFIG.SELF.OFFSET_X = 0 			   -- 自己箭頭圖案的水平位置 The x/y offset of the texture relative to the anchor point.
+CONFIG.SELF.OFFSET_Y = -10 			   -- 自己箭頭圖案的垂直位置
+
+CONFIG.FRIENDLY.TEXTURE_POINT = "BOTTOM"   -- The point of the texture that should be anchored to the nameplate.
+CONFIG.FRIENDLY.ANCHOR_POINT  = "TOP"	   -- The point of the nameplate the texture should be anchored to.
+CONFIG.FRIENDLY.OFFSET_X = 0 			   -- 友方箭頭圖案的水平位置 The x/y offset of the texture relative to the anchor point.
+CONFIG.FRIENDLY.OFFSET_Y = 0 			   -- 友方箭頭圖案的垂直位置
+
+CONFIG.HOSTILE.TEXTURE_POINT = "BOTTOM"    -- The point of the texture that should be anchored to the nameplate.
+CONFIG.HOSTILE.ANCHOR_POINT  = "TOP"	   -- The point of the nameplate the texture should be anchored to.
+CONFIG.HOSTILE.OFFSET_X = 0 			   -- 敵方箭頭圖案的水平位置 The x/y offset of the texture relative to the anchor point.
+CONFIG.HOSTILE.OFFSET_Y = 22 			   -- 敵方箭頭圖案的垂直位置
 
 -------------------
 -- END OF CONFIG --

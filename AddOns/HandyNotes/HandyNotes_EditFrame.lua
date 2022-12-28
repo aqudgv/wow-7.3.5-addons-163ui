@@ -1,4 +1,4 @@
-﻿---------------------------------------------------------
+---------------------------------------------------------
 -- Module declaration
 local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes")
 local HN = HandyNotes:GetModule("HandyNotes")
@@ -294,8 +294,7 @@ HNEditFrame:SetScript("OnShow", function(self)
 		self:SetParent(WorldMapFrame)
 	else
 		self:SetParent(UIParent)
-    end
-    self:SetFrameStrata("DIALOG")
+	end
 end)
 
 

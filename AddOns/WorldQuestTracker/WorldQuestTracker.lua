@@ -38,12 +38,12 @@ do
 	DF:NewColor ("WQT_ORANGE_RESOURCES_AVAILABLE", 1, .7, .2, .85)
 	DF:NewColor ("WQT_ORANGE_YELLOW_RARE_TITTLE", 1, 0.677059, 0.05, 1)
 	
-	DF:InstallTemplate ("font", "WQT_SUMMARY_TITLE", {color = "orange", size = 12, font = ChatFontNormal:GetFont()})
-	DF:InstallTemplate ("font", "WQT_RESOURCES_AVAILABLE", {color = {1, .7, .2, .85}, size = 10, font = ChatFontNormal:GetFont()})
-	DF:InstallTemplate ("font", "WQT_GROUPFINDER_BIG", {color = {1, .7, .2, .85}, size = 11, font = ChatFontNormal:GetFont()})
-	DF:InstallTemplate ("font", "WQT_GROUPFINDER_SMALL", {color = {1, .9, .1, .85}, size = 10, font = ChatFontNormal:GetFont()})
-	DF:InstallTemplate ("font", "WQT_GROUPFINDER_TRANSPARENT", {color = {1, 1, 1, .2}, size = 10, font = ChatFontNormal:GetFont()})
-	DF:InstallTemplate ("font", "WQT_TOGGLEQUEST_TEXT", {color = {0.811, 0.626, .109}, size = 10, font = ChatFontNormal:GetFont()})
+	DF:InstallTemplate ("font", "WQT_SUMMARY_TITLE", {color = "orange", size = 12, font = "Friz Quadrata TT"})
+	DF:InstallTemplate ("font", "WQT_RESOURCES_AVAILABLE", {color = {1, .7, .2, .85}, size = 10, font = "Friz Quadrata TT"})
+	DF:InstallTemplate ("font", "WQT_GROUPFINDER_BIG", {color = {1, .7, .2, .85}, size = 11, font = "Friz Quadrata TT"})
+	DF:InstallTemplate ("font", "WQT_GROUPFINDER_SMALL", {color = {1, .9, .1, .85}, size = 10, font = "Friz Quadrata TT"})
+	DF:InstallTemplate ("font", "WQT_GROUPFINDER_TRANSPARENT", {color = {1, 1, 1, .2}, size = 10, font = "Friz Quadrata TT"})
+	DF:InstallTemplate ("font", "WQT_TOGGLEQUEST_TEXT", {color = {0.811, 0.626, .109}, size = 10, font = "Friz Quadrata TT"})
 	
 	DF:InstallTemplate ("button", "WQT_GROUPFINDER_BUTTON", {
 		backdrop = {edgeFile = [[Interface\Buttons\WHITE8X8]], edgeSize = 1, bgFile = [[Interface\Tooltips\UI-Tooltip-Background]], tileSize = 64, tile = true},
@@ -253,7 +253,7 @@ local default_config = {
 		tracker_only_currentmap = false,
 		tracker_scale = 1,
 		tracker_show_time = false,
-		tracker_textsize = 12,
+		tracker_textsize = 16,
 		use_quest_summary = true,
 		zone_only_tracked = false,
 		low_level_tutorial = false, --
@@ -424,7 +424,7 @@ local measurePerformance = function (self, deltaTime)
 			for i = 1, #self.timeTable do
 				local v = self.timeTable [i]
 				if (v > .02) then
-					print ("Load Time:", v, "seconds.")
+					print (L["Load Time:"], v, L["seconds."])
 				end
 			end
 			self.DumpTime = nil
@@ -642,9 +642,9 @@ function WorldQuestTracker.RareWidgetOnClick (self, button)
 			local itemLevelRequired = ff.GetItemLevelRequirement()
 			
 			if (EnglishRareName and WorldQuestTracker.db.profile.rarescan.always_use_english) then
-				WorldQuestTracker.FindGroupForCustom (EnglishRareName, rareName, L["S_GROUPFINDER_ACTIONS_SEARCH_RARENPC"], "Doing rare encounter against " .. rareName .. ". Group created with World Quest Tracker #NPCID" .. npcId .. "#LOC " .. (rareName or "") .. " ", itemLevelRequired, callback)
+				WorldQuestTracker.FindGroupForCustom (EnglishRareName, rareName, L["S_GROUPFINDER_ACTIONS_SEARCH_RARENPC"], L["Doing rare encounter against "] .. rareName .. L[". Group created with World Quest Tracker #NPCID"] .. npcId .. "#LOC " .. (rareName or "") .. " ", itemLevelRequired, callback)
 			else
-				WorldQuestTracker.FindGroupForCustom (rareName, rareName, L["S_GROUPFINDER_ACTIONS_SEARCH_RARENPC"], "Doing rare encounter against " .. rareName .. ". Group created with World Quest Tracker #NPCID" .. npcId .. "#LOC " .. (EnglishRareName or "") .. " ", itemLevelRequired, callback)
+				WorldQuestTracker.FindGroupForCustom (rareName, rareName, L["S_GROUPFINDER_ACTIONS_SEARCH_RARENPC"], L["Doing rare encounter against "] .. rareName .. L[". Group created with World Quest Tracker #NPCID"] .. npcId .. "#LOC " .. (EnglishRareName or "") .. " ", itemLevelRequired, callback)
 			end
 		end
 		
@@ -1026,9 +1026,9 @@ function WorldQuestTracker:OnInit()
 						local callback = nil
 						local ENNameFromMapFileName = mapFileName:gsub ("InvasionPoint", "")
 						if (ENNameFromMapFileName and WorldQuestTracker.db.profile.rarescan.always_use_english) then
-							WorldQuestTracker.FindGroupForCustom ("Invasion Point: " .. (ENNameFromMapFileName or ""), invasionName, L["S_GROUPFINDER_ACTIONS_SEARCH"], "Doing Invasion Point " .. invasionName .. ". Group created with World Quest Tracker #EN Invasion Point: " .. (ENNameFromMapFileName or "") .. " ", 0, callback)
+							WorldQuestTracker.FindGroupForCustom ("Invasion Point: " .. (ENNameFromMapFileName or ""), invasionName, L["S_GROUPFINDER_ACTIONS_SEARCH"], L["Doing Invasion Point "] .. invasionName .. L[". Group created with World Quest Tracker #EN Invasion Point: "] .. (ENNameFromMapFileName or "") .. " ", 0, callback)
 						else
-							WorldQuestTracker.FindGroupForCustom (invasionName, invasionName, L["S_GROUPFINDER_ACTIONS_SEARCH"], "Doing Invasion Point " .. invasionName .. ". Group created with World Quest Tracker #EN Invasion Point: " .. (ENNameFromMapFileName or "") .. " ", 0, callback)
+							WorldQuestTracker.FindGroupForCustom (invasionName, invasionName, L["S_GROUPFINDER_ACTIONS_SEARCH"], L["Doing Invasion Point "] .. invasionName .. L[". Group created with World Quest Tracker #EN Invasion Point: "] .. (ENNameFromMapFileName or "") .. " ", 0, callback)
 						end
 					else
 						WorldQuestTracker:Msg (L["S_GROUPFINDER_QUEUEBUSY2"])
@@ -2269,9 +2269,9 @@ function rf.IsTargetARare()
 								local itemLevelRequired = ff.GetItemLevelRequirement()
 								
 								if (EnglishRareName and WorldQuestTracker.db.profile.rarescan.always_use_english) then
-									WorldQuestTracker.FindGroupForCustom (EnglishRareName, rareName, L["S_GROUPFINDER_ACTIONS_SEARCH_RARENPC"], "Doing rare encounter against " .. rareName .. ". Group created with World Quest Tracker #NPCID" .. npcId .. "#LOC " .. (rareName or "") .. " ", itemLevelRequired, callback)
+									WorldQuestTracker.FindGroupForCustom (EnglishRareName, rareName, L["S_GROUPFINDER_ACTIONS_SEARCH_RARENPC"], L["Doing rare encounter against "] .. rareName .. L[". Group created with World Quest Tracker #NPCID"] .. npcId .. "#LOC " .. (rareName or "") .. " ", itemLevelRequired, callback)
 								else
-									WorldQuestTracker.FindGroupForCustom (rareName, rareName, L["S_GROUPFINDER_ACTIONS_SEARCH_RARENPC"], "Doing rare encounter against " .. rareName .. ". Group created with World Quest Tracker #NPCID" .. npcId .. "#LOC " .. (EnglishRareName or "") .. " ", itemLevelRequired, callback)
+									WorldQuestTracker.FindGroupForCustom (rareName, rareName, L["S_GROUPFINDER_ACTIONS_SEARCH_RARENPC"], L["Doing rare encounter against "] .. rareName .. L[". Group created with World Quest Tracker #NPCID"] .. npcId .. "#LOC " .. (EnglishRareName or "") .. " ", itemLevelRequired, callback)
 								end
 							end
 						end
@@ -2291,10 +2291,10 @@ function rf.IsTargetARare()
 							
 							local EnglishRareName = rf.RaresENNames [npcId]
 							if (EnglishRareName and WorldQuestTracker.db.profile.rarescan.always_use_english) then
-								WorldQuestTracker.FindGroupForCustom (EnglishRareName, rareName, L["S_GROUPFINDER_ACTIONS_SEARCH"], "Doing Argus World Boss against " .. rareName .. " Group created with World Quest Tracker #NPCID" .. npcId .. "#LOC " .. (rareName or "") .. " ", 0, callback)
+								WorldQuestTracker.FindGroupForCustom (EnglishRareName, rareName, L["S_GROUPFINDER_ACTIONS_SEARCH"], L["Doing Argus World Boss against "] .. rareName .. L[" Group created with World Quest Tracker #NPCID"] .. npcId .. "#LOC " .. (rareName or "") .. " ", 0, callback)
 								WorldQuestTracker.Debug ("IsTargetARare() > invasion boss detected and using english name.")
 							else
-								WorldQuestTracker.FindGroupForCustom (rareName, rareName, L["S_GROUPFINDER_ACTIONS_SEARCH"], "Doing Invasion Point boss encounter against " .. rareName .. " Group created with World Quest Tracker #NPCID" .. npcId, 0, callback)
+								WorldQuestTracker.FindGroupForCustom (rareName, rareName, L["S_GROUPFINDER_ACTIONS_SEARCH"], L["Doing Invasion Point boss encounter against "] .. rareName .. L[" Group created with World Quest Tracker #NPCID"] .. npcId, 0, callback)
 								WorldQuestTracker.Debug ("IsTargetARare() > invasion boss detected and cannot english name.")
 							end
 						end
@@ -2759,7 +2759,7 @@ end
 		GameCooltip:AddMenu (1, ff.Options.SetAvoidPVPFunc, not WorldQuestTracker.db.profile.groupfinder.nopvp)
 		
 		--kick afk players
-		GameCooltip:AddLine ("Kick AFKs")
+		GameCooltip:AddLine (L["Kick AFKs"])
 		if (WorldQuestTracker.db.profile.groupfinder.noafk) then
 			GameCooltip:AddIcon ([[Interface\BUTTONS\UI-CheckBox-Check]], 1, 1, 16, 16)
 		else
@@ -2818,7 +2818,7 @@ end
 	ff.Title = ff.TitleBar:CreateFontString ("$parentTitle", "overlay", "GameFontNormal")
 	ff.Title:SetPoint ("center", ff.TitleBar, "center")
 	ff.Title:SetTextColor (.8, .8, .8, 1)
-	ff.Title:SetText ("World Quest Tracker")
+	ff.Title:SetText (L["World Quest Tracker"])
 	
 	ff.AnchorFrame = CreateFrame ("frame", nil, ff)
 	ff.AnchorFrame:SetAllPoints()
@@ -3787,7 +3787,7 @@ end
 		if (questID == 0) then
 			groupDesc = (ff.SearchCustomGroupDesc or "") .. "#ID" .. questID .. pvpTag
 		else
-			groupDesc = "Doing world quest " .. questName .. ". Group created with World Quest Tracker. #ID" .. questID .. pvpTag .. (AddToDesc or "")
+			groupDesc = L["Doing world quest "] .. questName .. L[". Group created with World Quest Tracker. #ID"] .. questID .. pvpTag .. (AddToDesc or "")
 		end
 
 		local itemLevelRequired = ff.MinItemLevel or 0
@@ -4218,10 +4218,6 @@ local questButton_OnClick = function (self, button)
 	if (not self.questID) then
 		return
 	end
-
-	local TaskPOI_OnClick = WorldMapFrameTaskPOI1 and WorldMapFrameTaskPOI1:GetScript("OnClick") or _G.TaskPOI_OnClick
-	if button == "RightButton" then return TaskPOI_OnClick(self, button) end
-
 	if (not HaveQuestData (self.questID)) then
 		WorldQuestTracker:Msg (L["S_ERROR_NOTLOADEDYET"])
 		return
@@ -4404,9 +4400,9 @@ local symbol_1K, symbol_10K, symbol_1B
 if (GetLocale() == "koKR") then
 	symbol_1K, symbol_10K, symbol_1B = "천", "만", "억"
 elseif (GetLocale() == "zhCN") then
-	symbol_1K, symbol_10K, symbol_1B = "K", "万", "亿"
+	symbol_1K, symbol_10K, symbol_1B = "千", "万", "亿"
 elseif (GetLocale() == "zhTW") then
-	symbol_1K, symbol_10K, symbol_1B = "K", "萬", "億"
+	symbol_1K, symbol_10K, symbol_1B = "千", "萬", "億"
 end
 
 if (symbol_1K) then
@@ -5510,7 +5506,6 @@ function WorldQuestTracker.CreateZoneWidget (index, name, parent) --~zone
 	button:SetScript ("OnEnter", TaskPOI_OnEnter)
 	button:SetScript ("OnLeave", TaskPOI_OnLeave)
 	button:SetScript ("OnClick", questButton_OnClick)
-    button:RegisterForClicks("AnyUp")
 	
 	button:RegisterForClicks ("LeftButtonDown", "MiddleButtonDown", "RightButtonDown")
 	
@@ -6474,7 +6469,7 @@ function WorldQuestTracker.ShowTutorialAlert()
 	elseif (WorldQuestTracker.db.profile.AlertTutorialStep == 4) then
 		local alert = CreateFrame ("frame", "WorldQuestTrackerTutorialAlert4", worldFramePOIs, "MicroButtonAlertTemplate")
 		alert:SetFrameLevel (302)
-		alert.label = "Click on Summary to see statistics and a saved list of quests on other characters."
+		alert.label = L["Click on Summary to see statistics and a saved list of quests on other characters."]
 		alert.Text:SetSpacing (4)
 		MicroButtonAlert_SetText (alert, alert.label)
 		alert:SetPoint ("topleft", worldFramePOIs, "topleft", 0, -393)
@@ -7754,13 +7749,13 @@ hooksecurefunc ("ToggleWorldMap", function (self)
 				GameCooltip:AddLine ("$div")
 				
 				if (WorldQuestTracker.db.profile.filter_force_show_brokenshore) then
-					GameCooltip:AddLine ("Ignore Argus")
-					GameCooltip:AddLine ("World quets on Argus map will always be shown.", "", 2)
+					GameCooltip:AddLine (L["Ignore Argus"])
+					GameCooltip:AddLine (L["World quets on Argus map will always be shown."], "", 2)
 					GameCooltip:AddIcon ([[Interface\ICONS\70_inscription_vantus_rune_tomb]], 1, 1, 23*.54, 37*.40, 0, 1, 0, 1)
 					GameCooltip:AddIcon ([[Interface\BUTTONS\UI-CheckBox-Check]], 1, 2, 16, 16, 0, 1, 0, 1, overlayColor, nil, true)
 				else
-					GameCooltip:AddLine ("Ignore Argus", "", 1, "silver")
-					GameCooltip:AddLine ("World quets on Argus map will always be shown.", "", 2)
+					GameCooltip:AddLine (L["Ignore Argus"], "", 1, "silver")
+					GameCooltip:AddLine (L["World quets on Argus map will always be shown."], "", 2)
 					GameCooltip:AddIcon (WQT_GENERAL_STRINGS_AND_ICONS.criteria.icon, 1, 1, 23*.54, 37*.40, l, r, t, b, nil, nil, true)
 				end
 				GameCooltip:AddMenu (1, toggle_brokenshore_bypass)
@@ -8071,11 +8066,11 @@ hooksecurefunc ("ToggleWorldMap", function (self)
 				GameCooltip:AddLine ("$div", nil, 2, nil, -5, -11)
 				--
 				
-				GameCooltip:AddLine ("Small Text Size", "", 2)
+				GameCooltip:AddLine (L["Small Text Size"], "", 2)
 				GameCooltip:AddMenu (2, options_on_click, "tracker_textsize", 12)
-				GameCooltip:AddLine ("Medium Text Size", "", 2)
+				GameCooltip:AddLine (L["Medium Text Size"], "", 2)
 				GameCooltip:AddMenu (2, options_on_click, "tracker_textsize", 13)
-				GameCooltip:AddLine ("Large Text Size", "", 2)
+				GameCooltip:AddLine (L["Large Text Size"], "", 2)
 				GameCooltip:AddMenu (2, options_on_click, "tracker_textsize", 14)
 				
 				--
@@ -8112,7 +8107,7 @@ hooksecurefunc ("ToggleWorldMap", function (self)
 				end
 				GameCooltip:AddMenu (2, options_on_click, "tracker_is_locked", not WorldQuestTracker.db.profile.tracker_is_locked)
 				--reset pos
-				GameCooltip:AddLine ("Reset Position", "", 2)
+				GameCooltip:AddLine (L["Reset Position"], "", 2)
 				GameCooltip:AddMenu (2, function()
 					options_on_click (_, _, "tracker_is_movable", false)
 					C_Timer.After (0.5, function()
@@ -8157,7 +8152,7 @@ hooksecurefunc ("ToggleWorldMap", function (self)
 				GameCooltip:AddLine (L["S_MAPBAR_OPTIONSMENU_WORLDMAPCONFIG"])
 				GameCooltip:AddIcon ([[Interface\Worldmap\UI-World-Icon]], 1, 1, IconSize, IconSize)
 
-				GameCooltip:AddLine ("Disable Icons on World Map", "", 2)
+				GameCooltip:AddLine (L["Disable Icons on World Map"], "", 2)
 				if (WorldQuestTracker.db.profile.disable_world_map_widgets) then
 					GameCooltip:AddIcon ([[Interface\BUTTONS\UI-CheckBox-Check]], 2, 1, 16, 16)
 				else
@@ -8167,22 +8162,22 @@ hooksecurefunc ("ToggleWorldMap", function (self)
 				GameCooltip:AddLine ("$div", nil, 2, nil, -7, -14)
 				
 				
-				GameCooltip:AddLine ("Small Text Size", "", 2)
+				GameCooltip:AddLine (L["Small Text Size"], "", 2)
 				GameCooltip:AddMenu (2, options_on_click, "world_map_config", "textsize", 9)
-				GameCooltip:AddLine ("Medium Text Size", "", 2)
+				GameCooltip:AddLine (L["Medium Text Size"], "", 2)
 				GameCooltip:AddMenu (2, options_on_click, "world_map_config", "textsize",  10)
-				GameCooltip:AddLine ("Large Text Size", "", 2)
+				GameCooltip:AddLine (L["Large Text Size"], "", 2)
 				GameCooltip:AddMenu (2, options_on_click, "world_map_config", "textsize",  11)
 				
 				GameCooltip:AddLine ("$div", nil, 2, nil, -7, -14)
 				
-				GameCooltip:AddLine ("Scale - Small", "", 2)
+				GameCooltip:AddLine (L["Scale - Small"], "", 2)
 				GameCooltip:AddMenu (2, options_on_click, "world_map_config", "scale", 1)
-				GameCooltip:AddLine ("Scale - Medium", "", 2)
+				GameCooltip:AddLine (L["Scale - Medium"], "", 2)
 				GameCooltip:AddMenu (2, options_on_click, "world_map_config", "scale",  1.2)
-				GameCooltip:AddLine ("Scale - Big", "", 2)
+				GameCooltip:AddLine (L["Scale - Big"], "", 2)
 				GameCooltip:AddMenu (2, options_on_click, "world_map_config", "scale",  1.4)
-				GameCooltip:AddLine ("Scale - Very Big", "", 2)
+				GameCooltip:AddLine (L["Scale - Very Big"], "", 2)
 				GameCooltip:AddMenu (2, options_on_click, "world_map_config", "scale",  1.6)
 				
 				--Zone Map Config
@@ -8199,18 +8194,18 @@ hooksecurefunc ("ToggleWorldMap", function (self)
 				
 				GameCooltip:AddLine ("$div", nil, 2, nil, -7, -14)
 				
-				GameCooltip:AddLine ("Small Quest Icons", "", 2)
+				GameCooltip:AddLine (L["Small Quest Icons"], "", 2)
 				GameCooltip:AddMenu (2, options_on_click, "zone_map_config", "scale", 1)
-				GameCooltip:AddLine ("Medium Quest Icons", "", 2)
+				GameCooltip:AddLine (L["Medium Quest Icons"], "", 2)
 				GameCooltip:AddMenu (2, options_on_click, "zone_map_config", "scale",  1.15)
-				GameCooltip:AddLine ("Large Quest Icons", "", 2)
+				GameCooltip:AddLine (L["Large Quest Icons"], "", 2)
 				GameCooltip:AddMenu (2, options_on_click, "zone_map_config", "scale",  1.23)
-				GameCooltip:AddLine ("Very Large Quest Icons", "", 2)
+				GameCooltip:AddLine (L["Very Large Quest Icons"], "", 2)
 				GameCooltip:AddMenu (2, options_on_click, "zone_map_config", "scale",  1.35)
 				
 				GameCooltip:AddLine ("$div", nil, 2, nil, -7, -14)
 				
-				GameCooltip:AddLine ("Only Tracked", "", 2)
+				GameCooltip:AddLine (L["Only Tracked"], "", 2)
 				if (WorldQuestTracker.db.profile.zone_only_tracked) then
 					GameCooltip:AddIcon ([[Interface\BUTTONS\UI-CheckBox-Check]], 2, 1, 16, 16)
 				else
@@ -8346,7 +8341,7 @@ hooksecurefunc ("ToggleWorldMap", function (self)
 					GameCooltip:AddLine ("$div", nil, 2, nil, -5, -11)
 					
 					--no pvp realms
-					GameCooltip:AddLine ("Avoid PVP Servers", "", 2)
+					GameCooltip:AddLine (L["Avoid PVP Servers"], "", 2)
 					if (WorldQuestTracker.db.profile.groupfinder.nopvp) then
 						GameCooltip:AddIcon ([[Interface\BUTTONS\UI-CheckBox-Check]], 2, 1, 16, 16)
 					else
@@ -8355,7 +8350,7 @@ hooksecurefunc ("ToggleWorldMap", function (self)
 					GameCooltip:AddMenu (2, ff.Options.SetAvoidPVPFunc, not WorldQuestTracker.db.profile.groupfinder.nopvp)					
 					
 					--kick afk players
-					GameCooltip:AddLine ("Kick AFKs", "", 2)
+					GameCooltip:AddLine (L["Kick AFKs"], "", 2)
 					if (WorldQuestTracker.db.profile.groupfinder.noafk) then
 						GameCooltip:AddIcon ([[Interface\BUTTONS\UI-CheckBox-Check]], 2, 1, 16, 16)
 					else
@@ -8405,7 +8400,7 @@ hooksecurefunc ("ToggleWorldMap", function (self)
 					end
 					GameCooltip:AddMenu (2, options_on_click, "rarescan", "playsound", not WorldQuestTracker.db.profile.rarescan.playsound)
 					
-					GameCooltip:AddLine ("Volume: 100%", "", 2)
+					GameCooltip:AddLine (L["Volume: 100%"], "", 2)
 					if (WorldQuestTracker.db.profile.rarescan.playsound_volume == 1) then
 						GameCooltip:AddIcon ([[Interface\BUTTONS\UI-CheckBox-Check]], 2, 1, 16, 16)
 					else
@@ -8413,7 +8408,7 @@ hooksecurefunc ("ToggleWorldMap", function (self)
 					end
 					GameCooltip:AddMenu (2, options_on_click, "rarescan", "playsound_volume", 1)
 					
-					GameCooltip:AddLine ("Volume: 50%", "", 2)
+					GameCooltip:AddLine (L["Volume: 50%"], "", 2)
 					if (WorldQuestTracker.db.profile.rarescan.playsound_volume == 2) then
 						GameCooltip:AddIcon ([[Interface\BUTTONS\UI-CheckBox-Check]], 2, 1, 16, 16)
 					else
@@ -8421,7 +8416,7 @@ hooksecurefunc ("ToggleWorldMap", function (self)
 					end
 					GameCooltip:AddMenu (2, options_on_click, "rarescan", "playsound_volume", 2)
 
-					GameCooltip:AddLine ("Volume: 30%", "", 2)
+					GameCooltip:AddLine (L["Volume: 30%"], "", 2)
 					if (WorldQuestTracker.db.profile.rarescan.playsound_volume == 3) then
 						GameCooltip:AddIcon ([[Interface\BUTTONS\UI-CheckBox-Check]], 2, 1, 16, 16)
 					else
@@ -8584,11 +8579,11 @@ hooksecurefunc ("ToggleWorldMap", function (self)
 			
 			--> options on the interface menu
 			WorldQuestTracker.OptionsInterfaceMenu = CreateFrame ("frame", "WorldQuestTrackerInterfaceOptionsPanel", UIParent)
-			WorldQuestTracker.OptionsInterfaceMenu.name = "World Quest Tracker"
+			WorldQuestTracker.OptionsInterfaceMenu.name = L["World Quest Tracker"]
 			InterfaceOptions_AddCategory (WorldQuestTracker.OptionsInterfaceMenu)
 			
 			WorldQuestTracker.OptionsInterfaceMenu.options_button = CreateFrame ("button", nil, WorldQuestTracker.OptionsInterfaceMenu, "OptionsButtonTemplate")
-			WorldQuestTracker.OptionsInterfaceMenu.options_button:SetText ("Hover Over Me: Options Menu")
+			WorldQuestTracker.OptionsInterfaceMenu.options_button:SetText (L["Hover Over Me: Options Menu"])
 			WorldQuestTracker.OptionsInterfaceMenu.options_button:SetPoint ("topleft", WorldQuestTracker.OptionsInterfaceMenu, "topleft", 100, -300)
 			WorldQuestTracker.OptionsInterfaceMenu.options_button:SetWidth (270)
 			
@@ -9335,7 +9330,7 @@ hooksecurefunc ("ToggleWorldMap", function (self)
 				local partyStar2 = tutorialFrame:CreateFontString (nil, "overlay", "GameFontNormal")
 				partyStar2:SetPoint ("left", partyStar, "right", 6, 0)
 				DF:SetFontSize (partyStar2, 12)
-				partyStar2:SetText ("A blue star indicates all party members have this quest as well (if they have world quest tracker installed).")
+				partyStar2:SetText (L["A blue star indicates all party members have this quest as well (if they have world quest tracker installed)."])
 			end
 			
 			WorldQuestTracker.ShowTutorialPanel()
@@ -11251,7 +11246,7 @@ function WorldQuestTracker:TAXIMAP_OPENED()
 		if (not WorldQuestTracker.db.profile.TutorialTaxyMap) then
 			local alert = CreateFrame ("frame", "WorldQuestTrackerTaxyTutorial", checkboxShowTrackedOnly.widget, "MicroButtonAlertTemplate")
 			alert:SetFrameLevel (302)
-			alert.label = "Options are here, show all quests or only those being tracked"
+			alert.label = L["Options are here, show all quests or only those being tracked"]
 			alert.Text:SetSpacing (4)
 			MicroButtonAlert_SetText (alert, alert.label)
 			alert:SetPoint ("bottom", checkboxShowTrackedOnly.widget, "top", 0, 30)
@@ -11476,21 +11471,21 @@ WorldQuestTracker.mapTables = {
 	[azsuna_mapId] = {
 		widgets = {},
 		Anchor_X = 0.01,
-		Anchor_Y = 0.60,
+		Anchor_Y = 0.52,
 		GrowRight = true,
 		show_on_map = WorldQuestTracker.MAPID_BROKENISLES,
 	},
 	[valsharah_mapId] = {
 		widgets = {},
 		Anchor_X = 0.01,
-		Anchor_Y = 0.24,
+		Anchor_Y = 0.37,
 		GrowRight = true,
 		show_on_map = WorldQuestTracker.MAPID_BROKENISLES,
 	},
 	[highmountain_mapId] = {
 		widgets = {},
 		Anchor_X = 0.01,
-		Anchor_Y = 0.10,
+		Anchor_Y = 0.20,
 		GrowRight = true,
 		show_on_map = WorldQuestTracker.MAPID_BROKENISLES,
 	},
@@ -12148,7 +12143,7 @@ function WorldQuestTracker.UpdateWorldQuestsOnWorldMap (noCache, showFade, isQue
 		--> show a message telling why world quests aren't shown
 		if (WorldQuestTracker.db.profile and not WorldQuestTracker.db.profile.low_level_tutorial) then
 			WorldQuestTracker.db.profile.low_level_tutorial = true
-			WorldQuestTracker:Msg ("World quests aren't shown because you're below level 110.") --> localize-me
+			WorldQuestTracker:Msg (L["World quests aren't shown because you're below level 110."]) --> localize-me
 		end
 		
 		return

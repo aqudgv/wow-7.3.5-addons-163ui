@@ -952,7 +952,7 @@ function DF:NewSwitch (parent, container, name, member, w, h, ltext, rtext, defa
 	end
 	
 	slider:SetBackdrop ({edgeFile = [[Interface\Buttons\UI-SliderBar-Border]], edgeSize = 8,
-	bgFile = [[Interface\AddOns\WorldQuestTracker\images\background]], insets = {left = 3, right = 3, top = 5, bottom = 5}})
+	bgFile = [[Interface\AddOns\Details\images\background]], insets = {left = 3, right = 3, top = 5, bottom = 5}})
 	
 	local thumb = slider:CreateTexture (nil, "artwork")
 	thumb:SetTexture ("Interface\\Buttons\\UI-ScrollBar-Knob")

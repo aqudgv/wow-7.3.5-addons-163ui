@@ -30,7 +30,7 @@
 		<Layers>
 		
 			<Layer level="BACKGROUND" textureSubLevel="2">
-				<Texture name="$parent_FrameBackgroundCenter" parentKey="framebackgroundCenter" file = "Interface\AddOns\WorldQuestTracker\libs\DF\cooltip_background">
+				<Texture name="$parent_FrameBackgroundCenter" parentKey="framebackgroundCenter" file = "Interface\AddOns\Details\framework\cooltip_background">
 					<Color a = "1" r = "0" g = "1" b = "0" />
 					<Anchors>
 						<Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT" x="35" y="-3"/>
@@ -43,7 +43,7 @@
 			</Layer>
 			
 			<Layer level="BACKGROUND" textureSubLevel="3">
-				<Texture name="$parent_FrameBackgroundLeft" parentKey="framebackgroundLeft" file = "Interface\AddOns\WorldQuestTracker\libs\DF\cooltip_background">
+				<Texture name="$parent_FrameBackgroundLeft" parentKey="framebackgroundLeft" file = "Interface\AddOns\Details\framework\cooltip_background">
 					<Color a = "1" r = "0" g = "1" b = "0" />
 					
 					<Anchors>
@@ -54,7 +54,7 @@
 					<TexCoords left="0" right="0.103515625" top="0" bottom="1"/>
 				</Texture>
 				
-				<Texture name="$parent_FrameBackgroundRight" parentKey="framebackgroundRight" file = "Interface\AddOns\WorldQuestTracker\libs\DF\cooltip_background">
+				<Texture name="$parent_FrameBackgroundRight" parentKey="framebackgroundRight" file = "Interface\AddOns\Details\framework\cooltip_background">
 					<Color a = "1" r = "0" g = "1" b = "0" />
 					
 					<Anchors>
@@ -79,19 +79,19 @@
 				<!-- selected bar -->
 				
 				<!-- top -->
-				<Texture name="$parent_SelectedTop" parentKey="selectedTop" file = "Interface\AddOns\WorldQuestTracker\images\cooltip_selected">
+				<Texture name="$parent_SelectedTop" parentKey="selectedTop" file = "Interface\AddOns\Details\images\cooltip_selected">
 					<Size y="3"/>
 					<TexCoords left="0" right="1" top="0" bottom="0.09375"/>
 				</Texture>
 				
 				<!-- bottom -->
-				<Texture name="$parent_SelectedBottom" parentKey="selectedBottom" file = "Interface\AddOns\WorldQuestTracker\images\cooltip_selected">
+				<Texture name="$parent_SelectedBottom" parentKey="selectedBottom" file = "Interface\AddOns\Details\images\cooltip_selected">
 					<Size y="3"/>
 					<TexCoords left="0" right="1" top="0.90625" bottom="1"/>
 				</Texture>
 				
 				<!-- middle -->
-				<Texture name="$parent_Selected" parentKey="selectedMiddle" file = "Interface\AddOns\WorldQuestTracker\images\cooltip_selected">
+				<Texture name="$parent_Selected" parentKey="selectedMiddle" file = "Interface\AddOns\Details\images\cooltip_selected">
 					<Anchors>
 						<Anchor point="TOPLEFT" relativeTo="$parent_SelectedTop" relativePoint="BOTTOMLEFT"/>
 						<Anchor point="BOTTOMRIGHT" relativeTo="$parent_SelectedBottom" relativePoint="TOPRIGHT"/>
@@ -271,7 +271,7 @@
 				<Layers>
 					<Layer level="BACKGROUND">
 						<!-- statusbar texture -->
-						<Texture name="$parent_Texture" hidden="false" parentKey="texture" file = "Interface\AddOns\WorldQuestTracker\images\bar4_reverse" horizTile="false" vertTile="false">
+						<Texture name="$parent_Texture" hidden="false" parentKey="texture" file = "Interface\AddOns\Details\images\bar4_reverse" horizTile="false" vertTile="false">
 							<Size x="300" y="14" />
 							<Color a = "1" r = "1" g = "1" b = "1" />
 						</Texture>

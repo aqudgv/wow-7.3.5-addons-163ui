@@ -1,4 +1,4 @@
-﻿local Postal = LibStub("AceAddon-3.0"):GetAddon("Postal")
+local Postal = LibStub("AceAddon-3.0"):GetAddon("Postal")
 local Postal_Select = Postal:NewModule("Select", "AceEvent-3.0", "AceHook-3.0")
 local L = LibStub("AceLocale-3.0"):GetLocale("Postal")
 Postal_Select.description = L["Add check boxes to the inbox for multiple mail operations."]
