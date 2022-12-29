@@ -1,0 +1,40 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+<Frame name="WhistlePing" parent="WhistleLOC" hidden="false">
+	<Size x="32" y="32"/>
+	<Anchors>
+		<Anchor point="CENTER" relativeTo="WhistleLOC"/>
+	</Anchors>
+	<Layers>
+		<Layer level="OVERLAY">
+			<Texture parentKey="centerRing" file="Interface\minimap\UI-Minimap-Ping-Center">
+				<Size x="22" y="22"/>
+				<Color r="0.5" g="1.0" b="0.5" a="0.9"/>
+				<Anchors>
+					<Anchor point="CENTER"/>
+				</Anchors>
+			</Texture>
+			<Texture parentKey="rotatingRing" file="Interface\minimap\UI-Minimap-Ping-Rotate">
+				<Size x="34" y="34"/>
+				<Color r="0.5" g="1.0" b="0.5" a="0.9"/>
+				<Anchors>
+					<Anchor point="CENTER"/>
+				</Anchors>
+			</Texture>
+			<!--<Texture parentKey="expandingRing" file="Interface\minimap\UI-Minimap-Ping-Expand">
+				<Size x="32" y="32"/>
+				<Color r="0.5" g="1.0" b="0.5" a="0.9"/>
+				<Anchors>
+					<Anchor point="CENTER"/>
+				</Anchors>
+			</Texture>-->
+		</Layer>
+	</Layers>
+	<Animations>
+		<AnimationGroup parentKey="Ping" looping="REPEAT">
+			<Rotation childKey="rotatingRing" degrees="-180" duration="1.5" order="1"/>
+			<!--<Scale childKey="expandingRing" scaleX="1.5" scaleY="1.5" duration="1" order="1"/>-->
+		</AnimationGroup>
+	</Animations>
+</Frame>
+</Ui>

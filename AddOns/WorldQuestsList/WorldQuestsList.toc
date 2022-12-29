@@ -1,0 +1,11 @@
+## Interface: 70300
+## Title: World Quests List
+## Author: ykiigor
+## Version: 50
+## SavedVariables: VWQL
+WorldQuestsList.lua
+
+## Title-zhCN: |cff880303[有爱]|r World 世界任务列表
+## X-Vendor: NetEase
+
+## X-163UI-Version: 20180206013336

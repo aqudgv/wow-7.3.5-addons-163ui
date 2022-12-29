@@ -1,4 +1,4 @@
-local Postal = LibStub("AceAddon-3.0"):GetAddon("Postal")
+﻿local Postal = LibStub("AceAddon-3.0"):GetAddon("Postal")
 local Postal_DoNotWant = Postal:NewModule("DoNotWant", "AceHook-3.0")
 local L = LibStub("AceLocale-3.0"):GetLocale("Postal")
 Postal_DoNotWant.description = L["Shows a clickable visual icon as to whether a mail will be returned or deleted on expiry."]
@@ -7,7 +7,7 @@ local _G = getfenv(0)
 local selectedID
 local selectedIDmoney
 
-StaticPopupDialogs["POSTAL_DELETE_MAIL"] = {
+StaticPopupDialogs["POSTAL_DELETE_MAIL"] = {preferredIndex = 3,
 	text = DELETE_MAIL_CONFIRMATION,
 	button1 = ACCEPT,
 	button2 = CANCEL,
@@ -21,7 +21,7 @@ StaticPopupDialogs["POSTAL_DELETE_MAIL"] = {
 	hideOnEscape = 1
 }
 
-StaticPopupDialogs["POSTAL_DELETE_MONEY"] = {
+StaticPopupDialogs["POSTAL_DELETE_MONEY"] = {preferredIndex = 3,
 	text = DELETE_MONEY_CONFIRMATION,
 	button1 = ACCEPT,
 	button2 = CANCEL,

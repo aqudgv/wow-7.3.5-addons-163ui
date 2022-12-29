@@ -330,7 +330,7 @@ local function CreateButton(i)
 	return button
 end
 
-function GetButton(i)
+local function GetButton(i)
 	return TaxiButtons[i] or CreateButton(i)
 end
 

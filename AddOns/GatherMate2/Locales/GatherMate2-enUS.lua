@@ -208,12 +208,6 @@ L["World Map Icon Scale"] = true
 L["World Map Icons"] = true
 L["Wrath of the Lich King"] = true
 
-L["GatherMate2"] = true
-L["GatherMate 2"] = true
-L["Minimap"] = true
-L["Maintenance"] = true
-L["Import"] = true
-L["Profiles"] = true
 
 local NL = LibStub("AceLocale-3.0"):NewLocale("GatherMate2Nodes", "enUS", true, debug)
 

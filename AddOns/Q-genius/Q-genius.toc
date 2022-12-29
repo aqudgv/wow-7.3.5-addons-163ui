@@ -1,0 +1,14 @@
+## Interface: 70300
+## Title: Q-genius
+## Title-zhCN: |cffff565e[网易]|r 任务达人
+## Author: DengSir
+## Version: 70100.01
+## LoadWith: Blizzard_AchievementUI
+## LoadOnDemand: 1
+## X-WoWBox-Ver: 1
+
+Load.xml
+
+## X-Vendor: NetEase
+
+## X-163UI-Version: 20170831002755

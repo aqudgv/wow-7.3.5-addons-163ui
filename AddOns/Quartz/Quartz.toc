@@ -6,9 +6,11 @@
 ## X-License: GPL v2
 ## X-Credits: Ammo (some code based on PitBull_CastBar), kergoth (Tradeskill Merge module idea), Roartindon (Lag Embed mode for Latency module)
 
+## Title-ruRU: Кварц
+## Notes-ruRU: Модульная полоса применений.
+## Notes-frFR: Barres d'incantation modulaires.
 ## Notes-zhCN: 模块化施法条。
-## Title-zhTW: |cffFF2D2D[戰鬥]|r 施法條
-## Notes-zhTW: Quartz |n功能增強、模組化、可自訂外觀的施法條。包括：玩家、目標、專注目標、寵物、GCD、增益效果和敵方施法條。|n|cffffd200使用方法：|r從Esc>介面>插件>施法條，移動位置和進行設定。
+## Notes-zhTW: 模組化施法條。
 
 ## SavedVariables: Quartz3DB
 ## OptionalDeps: Ace3, LibSharedMedia-3.0, AceGUI-3.0-SharedMediaWidgets, SharedMedia, FlightMap
@@ -56,3 +58,8 @@ modules\Interrupt.lua
 modules\Range.lua
 modules\Flight.lua
 modules\EnemyCasts.lua
+
+## Title: |cff880303[有爱]|r Quartz 美化施法条
+## Notes-zhCN: 美化和增强施法条，支持延迟显示等贴心功能
+## X-Vendor: NetEase
+## X-163UI-Version: 20170830213701

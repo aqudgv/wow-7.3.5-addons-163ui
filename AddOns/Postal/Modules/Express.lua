@@ -1,4 +1,4 @@
-local Postal = LibStub("AceAddon-3.0"):GetAddon("Postal")
+﻿local Postal = LibStub("AceAddon-3.0"):GetAddon("Postal")
 local Postal_Express = Postal:NewModule("Express", "AceEvent-3.0", "AceHook-3.0")
 local L = LibStub("AceLocale-3.0"):GetLocale("Postal")
 Postal_Express.description = L["Mouse click short cuts for mail."]
@@ -9,7 +9,7 @@ Postal_Express.description2 = L[ [[|cFFFFCC00*|r Shift-Click to take item/money 
 local _G = getfenv(0)
 
 function Postal_Express:MAIL_SHOW()
-	if Postal.db.profile.Express.EnableAltClick and not self:IsHooked(GameTooltip, "OnTooltipSetItem") then
+	if (Postal.db.profile.Express.EnableAltClick or Postal.db.profile.Express.BulkSend) and not self:IsHooked(GameTooltip, "OnTooltipSetItem") then
 		self:HookScript(GameTooltip, "OnTooltipSetItem")
 		self:RawHook("ContainerFrameItemButton_OnModifiedClick", true)
 	end
@@ -169,7 +169,7 @@ function Postal_Express.SetEnableAltClick(dropdownbutton, arg1, arg2, checked)
 			self:RawHook("ContainerFrameItemButton_OnModifiedClick", true)
 		end
 	else
-		if self:IsHooked(GameTooltip, "OnTooltipSetItem") then
+		if not Postal.db.profile.Express.BulkSend and self:IsHooked(GameTooltip, "OnTooltipSetItem") then
 			self:Unhook(GameTooltip, "OnTooltipSetItem")
 			self:Unhook("ContainerFrameItemButton_OnModifiedClick")
 		end
@@ -192,6 +192,18 @@ end
 
 function Postal_Express.SetBulkSend(dropdownbutton, arg1, arg2, checked)
 	Postal.db.profile.Express.BulkSend = checked
+    local self = Postal_Express
+    if checked then
+   		if MailFrame:IsVisible() and not self:IsHooked(GameTooltip, "OnTooltipSetItem") then
+   			self:HookScript(GameTooltip, "OnTooltipSetItem")
+   			self:RawHook("ContainerFrameItemButton_OnModifiedClick", true)
+   		end
+   	else
+   		if not Postal.db.profile.Express.EnableAltClick and self:IsHooked(GameTooltip, "OnTooltipSetItem") then
+   			self:Unhook(GameTooltip, "OnTooltipSetItem")
+   			self:Unhook("ContainerFrameItemButton_OnModifiedClick")
+   		end
+   	end
 end
 
 function Postal_Express.ModuleMenu(self, level)

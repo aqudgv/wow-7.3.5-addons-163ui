@@ -1181,10 +1181,6 @@ local function checkResetNPCGroupCounts()
 end
 
 local function updateNPCGroupCount( gName, gLeader )
-	
-	-- 修正使用預組隊伍時的BUG
-	if (node == nil or node == '') then return end
-	
 	gName = gName:lower();
 	if ( not gLeader ) then
 		gLeader = "none";
@@ -2288,7 +2284,7 @@ function Argus:RegisterWithHandyNotes()
         end
     end
 
-    HandyNotes:RegisterPluginDB(_L["Argus"], self, options)
+    HandyNotes:RegisterPluginDB("HandyNotesArgus", self, options)
     self:RegisterBucketEvent({ "LOOT_CLOSED", "PLAYER_MONEY", "SHOW_LOOT_TOAST", "SHOW_LOOT_TOAST_UPGRADE" }, 2, "Refresh")
     self:Refresh()
 end

@@ -1,4 +1,4 @@
-local Postal = LibStub("AceAddon-3.0"):GetAddon("Postal")
+﻿local Postal = LibStub("AceAddon-3.0"):GetAddon("Postal")
 local Postal_BlackBook = Postal:NewModule("BlackBook", "AceEvent-3.0", "AceHook-3.0")
 local L = LibStub("AceLocale-3.0"):GetLocale("Postal")
 Postal_BlackBook.description = L["Adds a contact list next to the To: field."]
@@ -57,7 +57,7 @@ function Postal_BlackBook:OnEnable()
 	local exclude = bit.bor(db.AutoCompleteFriends and AUTOCOMPLETE_FLAG_NONE or AUTOCOMPLETE_FLAG_FRIEND,
 		db.AutoCompleteGuild and AUTOCOMPLETE_FLAG_NONE or AUTOCOMPLETE_FLAG_IN_GUILD)
 	Postal_BlackBook_Autocomplete_Flags.include = bit.bxor(
-		db.ExcludeRandoms and (bit.bor(AUTOCOMPLETE_FLAG_FRIEND, AUTOCOMPLETE_FLAG_IN_GUILD)) or AUTOCOMPLETE_FLAG_ALL, exclude)
+        (true or db.ExcludeRandoms) and (bit.bor(AUTOCOMPLETE_FLAG_FRIEND, AUTOCOMPLETE_FLAG_IN_GUILD)) or AUTOCOMPLETE_FLAG_ALL, exclude)
 	SendMailNameEditBox.autoCompleteParams = Postal_BlackBook_Autocomplete_Flags
 
 	-- Delete Real ID database. Patch 4.0.1 onwards no longer allows addons to obtain Real ID information.
@@ -692,7 +692,7 @@ function Postal_BlackBook.SaveFriendGuildOption(dropdownbutton, arg1, arg2, chec
 	local exclude = bit.bor(db.AutoCompleteFriends and AUTOCOMPLETE_FLAG_NONE or AUTOCOMPLETE_FLAG_FRIEND,
 		db.AutoCompleteGuild and AUTOCOMPLETE_FLAG_NONE or AUTOCOMPLETE_FLAG_IN_GUILD)
 	Postal_BlackBook_Autocomplete_Flags.include = bit.bxor(
-		db.ExcludeRandoms and (bit.bor(AUTOCOMPLETE_FLAG_FRIEND, AUTOCOMPLETE_FLAG_IN_GUILD)) or AUTOCOMPLETE_FLAG_ALL, exclude)
+		(true or db.ExcludeRandoms) and (bit.bor(AUTOCOMPLETE_FLAG_FRIEND, AUTOCOMPLETE_FLAG_IN_GUILD)) or AUTOCOMPLETE_FLAG_ALL, exclude)
 end
 
 function Postal_BlackBook.SetAutoComplete(dropdownbutton, arg1, arg2, checked)
@@ -783,10 +783,10 @@ function Postal_BlackBook.ModuleMenu(self, level)
 			info.checked = db.AutoCompleteGuild
 			UIDropDownMenu_AddButton(info, level)
 
-			info.text = L["Exclude randoms you interacted with"]
-			info.arg2 = "ExcludeRandoms"
-			info.checked = db.ExcludeRandoms
-			UIDropDownMenu_AddButton(info, level)
+			--info.text = L["Exclude randoms you interacted with"]
+			--info.arg2 = "ExcludeRandoms"
+			--info.checked = db.ExcludeRandoms
+			--UIDropDownMenu_AddButton(info, level)
 
 			info.text = L["Disable Blizzard's auto-completion popup menu"]
 			info.arg2 = "DisableBlizzardAutoComplete"

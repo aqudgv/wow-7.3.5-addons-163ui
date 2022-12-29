@@ -1,0 +1,17 @@
+## Interface: 70300
+## Title: Wholly
+## Author: Scott M Harrison
+## Notes: Shows quest database and map pins
+## Version: 066
+## Dependencies: Grail
+## OptionalDeps: LibStub, LibDataBroker, TomTom, Gatherer, OmegaMap, Carbonite
+## SavedVariablesPerCharacter: WhollyDatabase
+
+Wholly.lua
+Wholly.xml
+
+## Title-zhCN: |cff880303[有爱]|r Wholly 可接任务查询
+## Notes-zhCN: 在大地图上显示可接任务, 必须依赖Grail插件, 占用很大, 默认关闭, 请在需要时启用
+## X-Vendor: NetEase
+
+## X-163UI-Version: 20180206013336

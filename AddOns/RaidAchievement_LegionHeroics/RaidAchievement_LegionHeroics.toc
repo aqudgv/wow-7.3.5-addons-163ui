@@ -1,0 +1,17 @@
+﻿## Interface: 70300
+## Title: Raid|cff7fff7fAchievement|r - Legion Dungeons
+## Title-ruRU: Raid|cff7fff7fAchievement|r - Подземелья Legion
+## Author: Shurshik
+## Notes: RaidAchievement Legion Dungeons Module
+## Notes-ruRU: Модуль RaidAchievement - Подземелья Legion
+## Dependencies: RaidAchievement
+## LoadOnDemand: 1
+## SavedVariablesPerCharacter: legionhraspisokon
+RaidAchievement_LegionHeroics.lua
+RaidAchievement_LegionHeroicsbosses.lua
+RaidAchievement_LegionHeroics.xml
+
+## Title: |cff880303[有爱]|r RaidAch [军团再临]
+## X-Vendor: NetEase
+
+## X-163UI-Version: 20170831002755

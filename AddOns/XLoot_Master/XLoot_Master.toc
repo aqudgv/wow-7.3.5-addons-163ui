@@ -1,0 +1,17 @@
+## Interface: 70300
+## Title: XLoot Master
+## Notes: Configurable Master Looter interface
+## Version: 7.3-3
+## Author: Xuerian, Dridzt
+## X-Category: Inventory
+
+## Dependencies: XLoot
+
+load.xml
+
+## Title: |cff880303[有爱]|r XLoot 拾取分配模块
+## Notes: XLoot配置拾取分配的界面
+## X-Vendor: NetEase
+
+
+## X-163UI-Version: 20180104000339

@@ -18,8 +18,8 @@ local _G = _G
 local db
 local defaults = {
 	profile = {
-		size = 48,
-		sizeBattleMap = 36,
+		size = 24,
+		sizeBattleMap = 16,
 	}
 }
 

@@ -1,4 +1,4 @@
---[[
+﻿--[[
 HandyNotes
 ]]
 
@@ -19,9 +19,9 @@ local defaults = {
 	profile = {
 		enabled       = true,
 		icon_scale    = 1.0,
-		icon_alpha    = 1.0,
-		icon_scale_minimap = 1.0,
-		icon_alpha_minimap = 1.0,
+		icon_alpha    = 0.9,
+		icon_scale_minimap = 0.75,
+		icon_alpha_minimap = 0.9,
 		enabledPlugins = {
 			['*'] = true,
 		},
@@ -559,6 +559,20 @@ options.args.plugins.disabled = options.args.overall_settings.disabled
 -- Addon initialization, enabling and disabling
 
 function HandyNotes:OnInitialize()
+    HandyNotesDB = HandyNotesDB or {}
+    HandyNotesDB._mapData = nil
+--[[
+    local dataVersion = "v1.3.3"
+    if U1CheckVersionedData(HandyNotesDB._mapData, dataVersion) then
+        continentList, continentMapFile, mapFiletoMapID, mapIDtoMapFile, reverseMapFileC, reverseMapFileZ, reverseZoneC, reverseZoneZ, zoneList, zonetoMapID = unpack(HandyNotesDB._mapData.data)
+    else
+        initMapData()
+        HandyNotesDB._mapData = {}
+        HandyNotesDB._mapData.data = {continentList, continentMapFile, mapFiletoMapID, mapIDtoMapFile, reverseMapFileC, reverseMapFileZ, reverseZoneC, reverseZoneZ, zoneList, zonetoMapID}
+        U1SaveVersionedData(HandyNotesDB._mapData, dataVersion)
+    end
+]]
+	
 	-- Set up our database
 	self.db = LibStub("AceDB-3.0"):New("HandyNotesDB", defaults)
 	self.db.RegisterCallback(self, "OnProfileChanged", "OnProfileChanged")
@@ -569,7 +583,7 @@ function HandyNotes:OnInitialize()
 	-- Register options table and slash command
 	LibStub("AceConfigRegistry-3.0"):RegisterOptionsTable("HandyNotes", options)
 	self:RegisterChatCommand("handynotes", function() LibStub("AceConfigDialog-3.0"):Open("HandyNotes") end)
-	LibStub("AceConfigDialog-3.0"):AddToBlizOptions("HandyNotes", L["HandyNotes"])
+	LibStub("AceConfigDialog-3.0"):AddToBlizOptions("HandyNotes", "HandyNotes")
 
 	-- Get the option table for profiles
 	options.args.profiles = LibStub("AceDBOptions-3.0"):GetOptionsTable(self.db)

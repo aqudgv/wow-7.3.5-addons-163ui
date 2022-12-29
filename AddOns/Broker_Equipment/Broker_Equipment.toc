@@ -1,0 +1,21 @@
+## Interface: 70300
+## Author: p3lim
+## Version: 70300.29-Release
+## Title: Broker Equipment
+## Notes: LDB Equipment Manager plug-in
+## SavedVariables: Broker_EquipmentDB
+
+## OptionalDeps: LibStub, CallbackHandler-1.0, LibDataBroker-1.1
+
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+
+Localization.lua
+Config.lua
+Broker_Equipment.lua
+
+## Title: |cff880303[有爱]|r Broker 套装菜单
+## Notes-zhCN: 快捷显示套装名称
+## X-Vendor: NetEase
+## X-163UI-Version: 20170831090444

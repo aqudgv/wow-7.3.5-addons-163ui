@@ -1,4 +1,4 @@
-local Postal = LibStub("AceAddon-3.0"):NewAddon("Postal", "AceEvent-3.0", "AceHook-3.0")
+﻿local Postal = LibStub("AceAddon-3.0"):NewAddon("Postal", "AceEvent-3.0", "AceHook-3.0")
 local L = LibStub("AceLocale-3.0"):GetLocale("Postal")
 _G["Postal"] = Postal
 local TOC = select(4, GetBuildInfo())
@@ -34,9 +34,9 @@ local defaults = {
 			UseMrPlow = true,
 		},
 		Express = {
-			EnableAltClick = true,
-			AutoSend = true,
-			BulkSend = true,
+			EnableAltClick = false,
+			AutoSend = false,
+			BulkSend = false,
 			MouseWheel = true,
 			MultiItemTooltip = true,
 		},
@@ -50,7 +50,7 @@ local defaults = {
 			AutoCompleteContacts = true,
 			AutoCompleteFriends = true,
 			AutoCompleteGuild = true,
-			ExcludeRandoms = true,
+			ExcludeRandoms = false,
 			DisableBlizzardAutoComplete = false,
 			UseAutoComplete = true,
 		},
@@ -229,7 +229,7 @@ function Postal.ProfileFunc(dropdownbutton, arg1, arg2, checked)
 	CloseDropDownMenus()
 end
 
-StaticPopupDialogs["POSTAL_NEW_PROFILE"] = {
+StaticPopupDialogs["POSTAL_NEW_PROFILE"] = {preferredIndex = 3,
 	text = L["New Profile Name:"],
 	button1 = ACCEPT,
 	button2 = CANCEL,
@@ -262,7 +262,7 @@ function Postal.Menu(self, level)
 	wipe(info)
 	if level == 1 then
 		info.isTitle = 1
-		info.text = "Postal"
+		info.text = "邮件增强"
 		info.notCheckable = 1
 		UIDropDownMenu_AddButton(info, level)
 

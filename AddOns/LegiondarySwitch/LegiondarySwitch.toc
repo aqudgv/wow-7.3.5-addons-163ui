@@ -1,0 +1,7 @@
+## Interface: 70300
+## Title: |cff880303[有爱]|r LegSwitch 橙装闪换
+## X-Vendor: NetEase
+
+LegiondarySwitch.lua
+
+## X-163UI-Version: 20180323003209

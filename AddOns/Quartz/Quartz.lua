@@ -28,7 +28,7 @@ local type, pairs, tonumber = type, pairs, tonumber
 
 local defaults = {
 	profile = {
-		modules = { ["*"] = true, ["Target"] = false, ["EnemyCasts"] = false, ["Mirror"] = false, ["Pet"] = false, ["Buff"] = false, ["Swing"] = false, ["GCD"] = false, ["Flight"] = false, ["Timer"] = false },
+		modules = { ["*"] = true, ["EnemyCasts"] = false, ["Buff"] = false },
 		hidesamwise = true,
 		sparkcolor = {1, 1, 1, 0.5},
 		spelltextcolor = {1, 1, 1},
@@ -45,14 +45,14 @@ local defaults = {
 	},
 }
 
-media:Register("statusbar", "BantoBar", "Interface\\Addons\\Quartz\\textures\\BantoBar")
+--media:Register("statusbar", "BantoBar", "Interface\\Addons\\Quartz\\textures\\BantoBar")
 media:Register("statusbar", "Frost", "Interface\\AddOns\\Quartz\\textures\\Frost")
 media:Register("statusbar", "Healbot", "Interface\\AddOns\\Quartz\\textures\\Healbot")
-media:Register("statusbar", "LiteStep", "Interface\\AddOns\\Quartz\\textures\\LiteStep")
+--media:Register("statusbar", "LiteStep", "Interface\\AddOns\\Quartz\\textures\\LiteStep")
 media:Register("statusbar", "Rocks", "Interface\\AddOns\\Quartz\\textures\\Rocks")
 media:Register("statusbar", "Runes", "Interface\\AddOns\\Quartz\\textures\\Runes")
 media:Register("statusbar", "Xeon", "Interface\\AddOns\\Quartz\\textures\\Xeon")
-media:Register("statusbar", "Minimalist", "Interface\\AddOns\\Quartz\\textures\\Minimalist")
+--media:Register("statusbar", "Minimalist", "Interface\\AddOns\\Quartz\\textures\\Minimalist")
 media:Register("border", "Tooltip enlarged", "Interface\\AddOns\\Quartz\\textures\\Tooltip-BigBorder")
 
 function Quartz3:OnInitialize()

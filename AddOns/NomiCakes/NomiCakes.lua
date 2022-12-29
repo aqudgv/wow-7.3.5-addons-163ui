@@ -9,21 +9,21 @@ local HookedButtons = {} -- [button] = true
 local Undiscoverable = { -- List of rank 1 recipes that can't be obtained from nomi
 	-- [recipeID] = recipeName,
 	-- Quests
-	[201513] = '由 |Hunit:Creature-0-0-0-0-93371-0|h[莫德維畢恩]|h (斯鐸海姆 72.6, 50.0) 掉落', -- Bear Tartare
-	[201496] = '任務：|cffffff00|Hquest:39117|h[終止尖嘯]|h|r, |Hunit:Creature-0-0-0-0-94117-0|h[瑟希莉．雷德克里夫]|h (維爾薩拉 36.0, 57.0)', -- Deep-Fried Mossgill
-	[201512] = '任務：|cffffff00|Hquest:40988|h[太多廚師]|h|r, |Hunit:Creature-0-0-0-0-101846-0|h[糯米]|h (達拉然)', -- Dried Mackerel Strips
-	[201498] = '任務：|cffffff00|Hquest:37727|h[調酒行家]|h|r, |Hunit:Creature-0-0-0-0-89341-0|h[博學者賈魯霍]|h (47.0, 41.4)', -- Faronaar Fizz
-	[201514] = '任務：|cffffff00|Hquest:37536|h[激勵士氣的法寶]|h|r, |Hunit:Creature-0-0-0-0-88923-0|h[斯騰法索]|h (48.0, 48.6)', -- Fighter Chow
-	[201497] = '任務：|cffffff00|Hquest:40078|h[沉重的負擔]|h|r, |Hunit:Creature-0-0-0-0-92539-0|h[哈維]|h (斯鐸海姆 60.2, 50.8)', -- Pickled Stormray
-	[201413] = '任務：|cffffff00|Hquest:39867|h[此獅非彼獅]|h|r, |Hunit:Creature-0-0-0-0-95438-0|h[伊萊亞斯]|h (高嶺 40.0, 52.2)', -- Salt and Pepper Shank
-	[201499] = '系列任務：|cffffff00|Hquest:39789|h[我們的家產被吃了]|h|r, |Hunit:Creature-0-0-0-0-97258-0|h[烏塔莎．風蹄]|h (斯鐸海姆 51.2, 57.0)', -- Spiced Rib Roast
-	[201503] = '由 |Hunit:Creature-0-0-0-0-112226-0|h[馬庫斯．希酉布魯克]|h (蘇拉瑪爾 71.6, 48.8) 販售', -- Koi-Scented Stormray
+	[201513] = '掉落自|Hunit:Creature-0-0-0-0-93371-0|h[莫多维乔]|h (风暴峡湾 72.6, 50.0)', -- Bear Tartare
+	[201496] = '任务：|cffffff00|Hquest:39117|h[猎隼止声]|h|r, |Hunit:Creature-0-0-0-0-94117-0|h[塞西莉·雷德克里夫]|h (瓦尔莎拉 36.0, 57.0)', -- Deep-Fried Mossgill
+	[201512] = '任务：|cffffff00|Hquest:40988|h[厨师太多]|h|r, |Hunit:Creature-0-0-0-0-101846-0|h[诺米]|h (达拉然)', -- Dried Mackerel Strips
+	[201498] = '任务：|cffffff00|Hquest:37727|h[调酒魔导师]|h|r, |Hunit:Creature-0-0-0-0-89341-0|h[魔导师加鲁霍德]|h (47.0, 41.4)', -- Faronaar Fizz
+	[201514] = '任务：|cffffff00|Hquest:37536|h[鼓舞士气]|h|r, |Hunit:Creature-0-0-0-0-88923-0|h[尾锚]|h (阿苏纳 48.0, 48.6)', -- Fighter Chow
+	[201497] = '任务：|cffffff00|Hquest:40078|h[重任]|h|r, |Hunit:Creature-0-0-0-0-92539-0|h[哈维]|h (风暴峡湾 60.2, 50.8)', -- Pickled Stormray
+	[201413] = '任务：|cffffff00|Hquest:39867|h[我没说谎!]|h|r, |Hunit:Creature-0-0-0-0-95438-0|h[艾利亚斯]|h (至高岭 40.0, 52.2)', -- Salt and Pepper Shank
+	[201499] = '系列任务：|cffffff00|Hquest:39789|h[过度掠食]|h|r, |Hunit:Creature-0-0-0-0-97258-0|h[欧塔萨·风蹄]|h (风暴峡湾 51.2, 57.0)', -- Spiced Rib Roast
+	[201503] = '购买自|Hunit:Creature-0-0-0-0-112226-0|h[马库斯·约布克]|h(苏拉玛 71.6, 48.8)', -- Koi-Scented Stormray
 	
 	-- Other stuff
-	[201501] = '|cff1eff00|Hitem:141011|h[海鮮]|h|r 由 |Hunit:Creature-0-0-0-0-99720-0|h[濱岸刺背蟹]|h (蘇拉瑪爾 76,50) 掉落 |cff1eff00|Hitem:141012|h[野味]|h|r 由 |Hunit:Creature-0-0-0-0-110042-0|h[心林雄鹿]|h (蘇拉瑪爾 65,45) 掉落', -- Suramar Surf and Turf
-	[201502] = '任務：|cffffff00|Hquest:40102|h[魚人：年輕世代]|h|r, |Hunit:Creature-0-0-0-0-98067-0|h[莫戈莫戈大王]|h (高嶺 42.6, 10.8)', -- 'Barracuda Mrglgagh',
-	[201500] = '由 |Hunit:Creature-0-0-0-0-110340-0|h[瑪雍尼斯]|h (蘇拉瑪爾 40.8, 32.8) 掉落', -- Leybeque Ribs
-	[201504] = '由 卓格巴 (高嶺 53.3, 62.4) 掉落 (稀有)', -- Drogbar-Style Salmon
+	[201501] = '|cff1eff00|Hitem:141011|h[食谱:海]|h|r 掉落自|Hunit:Creature-0-0-0-0-99720-0|h[海滩刺壳蟹]|h (苏拉玛 76,50) |cff1eff00|Hitem:141012|h[食谱：陆]|h|r 掉落自 |Hunit:Creature-0-0-0-0-110042-0|h[心木雄鹿]|h (苏拉玛 65,45)', -- Suramar Surf and Turf
+	[201502] = '任务：|cffffff00|Hquest:40102|h[鱼人:下一代]|h|r, |Hunit:Creature-0-0-0-0-98067-0|h[国王姆嘎姆嘎]|h (至高岭 42.6, 10.8)', -- 'Barracuda Mrglgagh',
+	[201500] = '掉落自|Hunit:Creature-0-0-0-0-110340-0|h[米奥妮克丝]|h (苏拉玛 40.8, 32.8)', -- Leybeque Ribs
+	[201504] = '掉落自(极少)卓格巴尔 (至高岭 53.3, 62.4)', -- Drogbar-Style Salmon
 }
 
 local Requisites = { -- List of recipes you must (probably) already know in order to discover a recipe from nomi
@@ -215,7 +215,7 @@ local function DecorateNomi()
 						if not IsNomi then return end
 						if TooltipInfo[self] and #TooltipInfo[self] > 0 then
 							GameTooltip:SetOwner(self, 'ANCHOR_RIGHT')
-							GameTooltip:AddLine('可能獲得的食譜')
+							GameTooltip:AddLine('可能学到的食谱：')
 							table.sort(TooltipInfo[self])
 							for _, name in pairs(TooltipInfo[self]) do
 								GameTooltip:AddLine(name)
@@ -280,7 +280,7 @@ local function DecorateNomi()
 						end
 					else
 						--button:SetFormattedText('|cff660000No more |T%d:16|t [%s]', ingredientIcon, ingredientName)
-						text = format('|cff660000不用再供應 |T%d:16|t [%s]', ingredientIcon, ingredientName)
+						text = format('|cff660000No more |T%d:16|t [%s]', ingredientIcon, ingredientName)
 					end
 					if text then
 						if activeWorkOrders[ingredientItemID] then
@@ -392,7 +392,7 @@ local function OutputRecipes()
 	end
 	
 	for ingredientLink, recipes in pairs(results) do
-		print('|cff66ff66可取得的|r ' .. ingredientLink .. ' |cff66ff66食譜：|r')
+		print('|cff66ff66已经学会的|r ' .. ingredientLink .. ' |cff66ff66食谱:|r')
 		--table.sort(recipes)
 		for recipeID in pairs(recipes) do
 			local prevRecipe = RecipeCache[recipeID].previousRecipeID
@@ -404,7 +404,7 @@ local function OutputRecipes()
 	end
 	
 	for recipeID, requisites in pairs(unavailable) do
-		print('|cffffff66缺少的|r ' .. GetSpellLink(recipeID) .. ' |cffffff66食譜：|r')
+		print('|cffffff66缺少|r ' .. GetSpellLink(recipeID) .. ' |cffffff66的前置:|r')
 		for requisite in pairs(requisites) do
 			--local prevRecipe = RecipeCache[recipeID].previousRecipeID
 			--if not prevRecipe or not recipes[prevRecipe] then -- skip higher ranks of the same item
@@ -414,18 +414,18 @@ local function OutputRecipes()
 		end
 	end
 	
-	print('|cffffff66缺少的食譜 (來源不是糯米)：|r')
+	print('|cffffff66缺失的食谱（无法跟诺米学到的）:|r')
 	local i = 1
 	for recipeID, description in pairs(Undiscoverable) do
 		local info = RecipeCache[recipeID]
 		if info and not info.learned then
-			print(format('%d) %s %s', i, GetSpellLink(recipeID) or ('Recipe ' .. recipeID), description or '???'))
+			print(format('%d) %s %s', i, GetSpellLink(recipeID) or ('食谱 ' .. recipeID), description or '???'))
 			i = i + 1
 		end
 	end
 end
 
-SLASH_NOMICAKES1, SLASH_NOMICAKES2, SLASH_NOMICAKES3 = '/nomicakes', '/nomi', '/糯米'
+SLASH_NOMICAKES1, SLASH_NOMICAKES2 = '/nomicakes', '/nomi'
 
 function SlashCmdList.NOMICAKES()
 	RequestCookingStuff(OutputRecipes)
@@ -473,7 +473,7 @@ do -- Experimental work order stuff
 			self:UnregisterEvent('SHIPMENT_CRAFTER_INFO')
 			local success, pendingShipments, maxShipments, ownedShipments = ...
 			if maxShipments == 0 then -- nomi is bugged (no work order window), we can't fetch work order data
-				print('|cffffff66糯米遇到了蟲蟲危機，請再試一次!||r') -- outputting a message might confuse people, but I think it's better than nothing
+				print('|cffffff66诺米出BUG了，请重试!|r') -- outputting a message might confuse people, but I think it's better than nothing
 				C_Garrison.CloseTradeskillCrafter() -- end interaction so we don't have to walk away from him
 			else
 				local now = time()
@@ -529,7 +529,7 @@ do -- Experimental work order stuff
 				if ingredientIcon then
 					name = format('|T%d:16|t %s', ingredientIcon, name)
 				end
-				print(format('%d |4張訂單:張訂單; 使用 %s', NumWorkOrdersOrdered, name))
+				print(format('%d |4Work Order:份订单; 份订单，食谱：%s', NumWorkOrdersOrdered, name))
 				NumWorkOrdersOrdered, WorkOrderType = 0, nil
 			end
 		elseif event == 'ADDON_LOADED' and ... == addonName then

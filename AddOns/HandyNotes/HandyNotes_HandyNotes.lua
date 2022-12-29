@@ -1,4 +1,4 @@
----------------------------------------------------------
+﻿---------------------------------------------------------
 -- Module declaration
 local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes")
 local HN = HandyNotes:NewModule("HandyNotes", "AceEvent-3.0", "AceHook-3.0", "AceConsole-3.0")
@@ -503,7 +503,7 @@ function HN:OnInitialize()
 	end
 
 	-- Initialize our database with HandyNotes
-	HandyNotes:RegisterPluginDB(L["HandyNotes"], HNHandler, options)
+	HandyNotes:RegisterPluginDB("HandyNotes", HNHandler, options)
 
 	--WorldMapMagnifyingGlassButton:SetText(WorldMapMagnifyingGlassButton:GetText() .. L["\nAlt+Right Click To Add a HandyNote"])
 
