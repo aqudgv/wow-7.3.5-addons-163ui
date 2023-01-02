@@ -1,7 +1,9 @@
 ## Interface: 70300
 ## Title: HandyNotes_Argus
-## Version: 0.20.0
+## Version: 0.26.5
 ## Notes: Shows location of treasures and rares in Argus & more
+## Title-zhTW: |cff4DFF4D[地圖]|r 地圖標記-阿古斯寶藏
+## Notes-zhTW: HandyNotes_Argus R & T |n在地圖上顯示阿古斯寶藏和稀有怪的位置。|n|cffffd200使用方法：|r從Esc>介面>插件>地圖標記>插件>阿古斯，進行設定。
 ## OptionalDeps: Ace3
 ## RequiredDeps: HandyNotes
 ## X-Embeds: Ace3
@@ -12,15 +14,6 @@ embeds.xml
 #@end-no-lib-strip@
 
 localization\enUS.lua
-localization\deDE.lua
-localization\esES.lua
 localization\zhCN.lua
 localization\zhTW.lua
-localization\koKR.lua
-localization\ruRU.lua
 HandyNotes_Argus.lua
-
-## Title-zhCN: |cff880303[有爱]|r HandyNotes 阿古斯宝箱
-## X-Vendor: NetEase
-
-## X-163UI-Version: 20171122233847
